@@ -1,0 +1,301 @@
+﻿@model Item
+@{
+    ViewBag.Title = "AddItem";
+    string ImagePath = "~/Content/ItemImages/";
+}
+
+<div class="row wrapper border-bottom white-bg page-heading">
+    <div class="col-lg-10">
+        <h2>Item Master</h2>
+        <ol class="breadcrumb">
+            <li>
+                <a href="@Url.Action("Index", "Home")">Dashboard</a>
+            </li>
+            <li>
+                <a href="@Url.Action("ItemList", "Item")">Item List</a>
+            </li>
+            <li class="active">
+                <strong>Item Master</strong>
+            </li>
+        </ol>
+    </div>
+    <div class="col-lg-2">
+    </div>
+</div>
+<div class="wrapper wrapper-content animated fadeInRight">
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="ibox float-e-margins">
+                @using (Html.BeginForm("SaveItem", "Item", FormMethod.Post, new { @id = "frmAddUpdate", @enctype = "multipart/form-data" }))
+                {
+                    @Html.HiddenFor(m => m.ItemID)
+                    <div class="col-lg-12">
+                        <div class="ibox ">
+                            <div class="ibox-content">
+
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <ul class="sortable-list connectList agile-list">
+                                            <li class="success-element">
+                                                @Html.Label("Item Details")
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <div class="col-sm-3">
+                                        @Html.Label("Category") <b style="color:red">*</b>
+                                        @Html.DropDownListFor(m => m.CategoryID, CommonHelper.GetCategory(), new { @class = "form-control" })
+                                    </div>
+
+                                    <div class="col-sm-3">
+                                        @Html.Label("Item Name") <b style="color:red">*</b>
+                                        @Html.TextBoxFor(m => m.ItemName, new { @placeholder = "Enter Item Name", @class = "form-control", @id = "ItemName", @name = "ItemName" })
+                                        <label id="Itemerror" class="error" style="display:none;">Entered item is already exist</label>
+                                    </div>
+                                    <div class="col-sm-3">
+                                        @if (!string.IsNullOrEmpty(Model.ImagePath))
+                                        {
+                                            @Html.Label("Change Image")
+                                        }
+                                        else
+                                        {
+                                            @Html.Label("Upload Image")
+                                        }
+                                        <input type='file' id='ImagePath_File' name='ImagePath_File' class='form-control' style='width: 100%;' multiple accept='image/*' />
+                                    </div>
+
+                                    @if (!string.IsNullOrEmpty(Model.ImagePath))
+                                    {
+                                        <div class="col-sm-3">
+                                            @Html.Label("Current Image")
+                                            <br />
+                                            <img src="@Url.Content(ImagePath + Model.ImagePath)" style="width:150px; height:150px" class="img-thumbnail m-b-md selectedImg" id="PreviewFile">
+                                        </div>
+                                    }
+                                </div>
+
+                                <div class="form-group row">
+                                    @*<div class="col-sm-4">
+                                        @Html.Label("UOM") <b style="color:red">*</b>
+                                        @Html.DropDownListFor(m => m.UOMID, CommonHelper.GetUnit(), new { @class = "form-control" })
+                                    </div>*@
+
+                                    
+
+                                </div>
+
+                                @* Sub Item *@
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <ul class="sortable-list connectList agile-list">
+                                            <li class="success-element">
+                                                @Html.Label("Manage Item Weight")
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    @Html.HiddenFor(m => m._subitemList.Count, new { Id = "SubItemCount" })
+                                    <div id="_divSubItem">
+                                        @for (var i = 0; i < Model._subitemList.Count; i++)
+                                        {
+                                            @Html.HiddenFor(m => m._subitemList[i].SubItemID)
+                                            <div class="col-sm-5" style="margin-top:5px;" id="div_Weight_@i">
+                                                <label>Weight</label>
+                                                @Html.TextBoxFor(m => m._subitemList[i].Weight, new { @placeholder = "Enter Weight", @class = "form-control" })
+                                            </div>
+                                            <div class="col-sm-5" style="margin-top:5px;" id="div_UOMID_@i">
+                                                <label>UOM</label>
+                                                @Html.DropDownListFor(m => m._subitemList[i].UOMID, new SelectList(CommonHelper.GetUnit(), "Value", "Text", Model._subitemList[i].UOMID), new { @class = "form-control" })
+                                            </div>
+                                            <div class="col-sm-2" style="margin-top:28px;" id="div_Delete_@i">
+                                                <a class="btn btn-primary" href="javascript:void(0)" onclick="RemoveRow(@i)"><i class='fa fa-trash'></i></a>
+                                            </div>
+                                        }
+                                    </div>
+                                    <div class="col-sm-2" style="margin-top:20px;">
+                                        <a class="btn btn-primary" href="javascript:void(0)" style="" id="btnAddSubItem" onclick="AddSubItem()">
+                                            <i class="fa fa-plus"></i>
+                                        </a>
+                                    </div>
+                                </div>
+                                @*  Sub Item *@
+
+                                <hr />
+                                <div class="form-group row">
+                                    <div class="col-sm-7 col-sm-offset-5">
+                                        <button type="submit" id="btnSubmit" class="btn btn-primary" onkeypress="return event.keyCode != 13;"><i class="fa fa-save"></i>&nbsp; Submit</button>&nbsp;&nbsp;
+                                        <a class="btn btn-white" href="@Url.Action("ItemList", "Item")" id="btnSubmit"><i class="fa fa-times"></i>&nbsp;Cancel</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                }
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Styles {
+    @Styles.Render("~/plugins/clockpickerStyles")
+    @Styles.Render("~/plugins/dateRangeStyles")
+    @Styles.Render("~/plugins/awesomeCheckboxStyles")
+    @Styles.Render("~/Content/plugins/iCheck/iCheckStyles")
+    @Styles.Render("~/Content/plugins/chosen/chosenStyles")
+    @Styles.Render("~/plugins/dataPickerStyles")
+    @Styles.Render("~/plugins/select2Styles")
+    @Styles.Render("~/plugins/sweetAlertStyles")
+    @Styles.Render("~/plugins/select2Styles")
+}
+@section Scripts{
+    @Scripts.Render("~/plugins/iCheck")
+    @Scripts.Render("~/plugins/dataPicker")
+    @Scripts.Render("~/plugins/chosen")
+    @Scripts.Render("~/plugins/clockpicker")
+    @Scripts.Render("~/plugins/dateRange")
+    @Scripts.Render("~/plugins/select2")
+    @Scripts.Render("~/plugins/validate")
+    @Scripts.Render("~/plugins/sweetAlert")
+    @Scripts.Render("~/plugins/select2")
+
+    <script type="text/javascript">
+        $(document).ready(function () {
+
+            $("#Itemerror").hide();
+
+            if ('@TempData["SuccessMessage"]' != '') {
+                sweetAlert("Sucesss!!", '@TempData["SuccessMessage"]', "success");
+            }
+            if ('@TempData["ErrorMessage"]' != '') {
+                sweetAlert("Error!!", '@TempData["ErrorMessage"]', "error");
+            }
+
+            $("#ItemName").blur(function () {         
+                if ($("#ItemID").val() == "0") {
+                    var ItemName = $("#ItemName").val();
+                    $.ajax({
+                        url: '@Url.Action("CheckItemIsExist", "Item")',
+                        type: "GET",
+                        dataType: "JSON",
+                        data: { ItemName: ItemName },
+                        success: function (data) {
+                            debugger;
+                            if (data == 'Exist') {
+                                $("#Itemerror").show();
+                                document.getElementById("btnSubmit").disabled = true;
+                            } else {
+                                $("#Itemerror").hide();
+                                document.getElementById("btnSubmit").disabled = false;
+                            }
+                        }
+                    });
+                }
+            });
+
+            $("#frmAddUpdate").validate({
+                rules: {
+                    ItemName: {
+                        required: true,
+                    },
+                    UOMID: {
+                        required: true
+                    },
+                    CategoryID: {
+                        required: true
+                    }
+                },
+                messages: {
+                    ItemName: {
+                        required: "Please enter item name",
+                    },
+                    UOMID: {
+                        required: "Please select unit",
+                    },
+                    CategoryID: {
+                        required: "Please select category",
+                    }
+                }
+            });
+
+            if ($("#SubItemCount").val() == 0) {
+                AddSubItem();
+            }
+
+        });
+
+        // Add SubItem
+        function AddSubItem() {
+
+            var index = $("#SubItemCount").val();
+            var dprUOMID = '.dprUOM' + index;
+
+            var divWeight = AddWeight(index);
+            $("#_divSubItem").append(divWeight);
+
+            var divUOM = AddUOM(index);
+            $("#_divSubItem").append(divUOM);
+
+            var divDelete = DeleteButton(index);
+            $("#_divSubItem").append(divDelete);
+
+            index = parseInt(index) + 1;
+            $("#SubItemCount").val(index);
+
+            // UOM
+            $.ajax({
+                type: "GET",
+                url: '@Url.Action("GetUOMList", "Item")',
+                contentType: 'application/json; charset=utf-8',
+                dataType: "JSON",
+                success: function (data) {
+                    $.each(data, function (i, drpList) {
+                        $(dprUOMID).append(`<option value="${drpList.Value}">
+                                       ${drpList.Text}
+                                  </option>`);
+                    });
+                },
+                error: function () {
+                    alert("Error !!");
+                }
+            });
+        }
+        function AddWeight(value) {
+            var div = $("<div class='col-sm-5' style='margin-top:5px;' id='div_Weight_" + value + "'>");
+            var lable = $("<label for='Weight'>Weight</label>").attr("type", "label");
+            div.append(lable);
+            var textBox = $("<input class='form-control' id='_subitemList[" + value + "].Weight' name='_subitemList[" + value + "].Weight' type='text' placeholder = 'Enter Weight' />").attr("type", "textbox");
+            textBox.val("");
+            div.append(textBox);
+
+            return div;
+        }
+
+        function AddUOM(value) {
+            var div = $("<div class='col-sm-5' style='margin-top:5px;' id='div_UOMID_" + value + "'>");
+            var lable = $("<label for='UOM'>UOM</label>").attr("type", "label");
+            div.append(lable);
+            var drp = $("<select id='_subitemList[" + value + "].UOMID' name='_subitemList[" + value + "].UOMID' class='form-control dprUOM" + value + "'></select>").attr("type", "dropdown");
+            div.append(drp);
+            return div;
+        }
+
+        function DeleteButton(value) {
+            var div = $("<div  class='col-sm-2' style='margin-top:28px;' id='div_Delete_" + value + "'>");
+
+            var button = $("<a class='btn btn-primary' href='javascript:void(0)' style=''><i class='fa fa-trash'></i></a> &nbsp;<span style='font-size: 15px;color: #BF1818;'></span>");
+            button.attr("onclick", "RemoveRow(" + value + ")");
+            div.append(button);
+
+            return div;
+        }
+        function RemoveRow(val) {
+            $("#div_Weight_" + val).remove();
+            $("#div_UOMID_" + val).remove();
+            $("#div_Delete_" + val).remove();
+        }
+        //   End
+
+    </script>
+}

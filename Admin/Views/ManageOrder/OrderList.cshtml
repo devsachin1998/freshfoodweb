@@ -1,0 +1,953 @@
+﻿@model Dashboard_Model
+
+@{
+    ViewBag.Title = "Manage Order";
+
+    var filePath = "http://admin.freshfoodz.in.net/Content/OrderSummary/";
+}
+
+<div class="row wrapper border-bottom white-bg page-heading">
+
+    <div class="col-lg-10">
+
+        <h2>Manage Order</h2>
+
+        <ol class="breadcrumb">
+
+            <li>
+                <a href="@Url.Action("Index", "Home")">
+                    Dashboard
+                </a>
+            </li>
+
+            <li class="active">
+                <strong>Order List</strong>
+            </li>
+
+        </ol>
+
+    </div>
+
+    <div class="col-lg-2">
+    </div>
+
+</div>
+
+
+<div class="wrapper wrapper-content animated fadeInRight">
+
+    <div class="row">
+
+        <div class="col-lg-12">
+
+            <div class="ibox float-e-margins">
+
+
+                <!-- =========================================
+                     HEADER
+                ========================================== -->
+
+                <div class="ibox-title">
+
+                    <div class="row" style="margin-left:15px;">
+
+                        <h5>
+                            Total Order ::
+                            &nbsp;
+                        </h5>
+
+                        <h5 style="color:red;">
+                            @Model.OrderCount
+                        </h5>
+
+                    </div>
+
+
+                    <div class="row" style="margin-left:15px;">
+
+                        <h5>
+                            Total Delivered Order ::
+                            &nbsp;
+                        </h5>
+
+                        <h5 style="color:red;">
+                            @Model.DeliveredOrederd
+                        </h5>
+
+                    </div>
+
+
+                    <div class="row" style="margin-left:15px;">
+
+                        <h5>
+                            Total Order Amount ::
+                            &nbsp;
+                        </h5>
+
+                        <h5 style="color:red;">
+
+                            <i class="fa fa-inr"
+                               aria-hidden="true"></i>
+
+                            &nbsp;
+
+                            @Model.Balance
+
+                        </h5>
+
+                    </div>
+
+
+                    <div class="row" style="margin-left:15px;">
+
+                        <h5>
+                            Total Order Billing Amount ::
+                            &nbsp;
+                        </h5>
+
+                        <h5 style="color:red;">
+
+                            <i class="fa fa-inr"
+                               aria-hidden="true"></i>
+
+                            &nbsp;
+
+                            @Model.OnlineAmount
+
+                        </h5>
+
+                    </div>
+
+                </div>
+
+
+                <!-- =========================================
+                     CONTENT
+                ========================================== -->
+
+                <div class="ibox-content">
+
+                    @using (Html.BeginForm(
+                        "OrderList",
+                        "ManageOrder",
+                        FormMethod.Get,
+                        new
+                        {
+                            @id = "frmAddUpdate",
+                            @enctype = "multipart/form-data"
+                        }))
+                    {
+
+
+                        <!-- =====================================
+                             DATE FILTER
+                        ====================================== -->
+
+                        <div class="row">
+
+
+                            <div class="col-md-3">
+
+                                @Html.Label("From Date")
+
+                                <b style="color:red">
+                                    *
+                                </b>
+
+
+                                <div class="form-group"
+                                     id="data_1">
+
+                                    <div class="input-group date">
+
+                                        <span class="input-group-addon">
+
+                                            <i class="fa fa-calendar"></i>
+
+                                        </span>
+
+
+                                        @Html.TextBox(
+                                            "FromDate",
+                                            null,
+                                            new
+                                            {
+                                                @class = "form-control",
+                                                @autocomplete = "off"
+                                            })
+
+                                    </div>
+
+
+                                    <div style="margin-top:22px;">
+
+                                        <button type="submit"
+                                                id="btnSubmit"
+                                                class="btn btn-primary">
+
+                                            Search
+
+                                        </button>
+
+                                        &nbsp;&nbsp;
+
+                                        <a class="btn btn-white"
+                                           href="@Url.Action(
+                                               "OrderList",
+                                               "ManageOrder")">
+
+                                            Reset
+
+                                        </a>
+
+                                    </div>
+
+                                </div>
+
+                            </div>
+
+
+                            <div class="col-md-3">
+
+                                @Html.Label("To Date")
+
+                                <b style="color:red">
+                                    *
+                                </b>
+
+
+                                <div class="form-group"
+                                     id="data_2">
+
+                                    <div class="input-group date">
+
+                                        <span class="input-group-addon">
+
+                                            <i class="fa fa-calendar"></i>
+
+                                        </span>
+
+
+                                        @Html.TextBox(
+                                            "ToDate",
+                                            null,
+                                            new
+                                            {
+                                                @class = "form-control",
+                                                @autocomplete = "off"
+                                            })
+
+                                    </div>
+
+                                </div>
+
+                            </div>
+
+
+                        </div>
+
+
+                        <hr />
+
+
+                        <!-- =====================================
+                             TABLE
+                        ====================================== -->
+
+                        <div class="table-scroll-wrapper">
+
+                            <table id="orderTable"
+                                   class="table table-striped table-bordered table-hover dataTables-example"
+                                   style="width:100%; min-width:1100px;">
+
+                                <thead>
+
+                                    <tr>
+
+                                        <th width="5%">
+                                            Sr.No
+                                        </th>
+
+                                        <th>
+                                            Order No
+                                        </th>
+
+                                        <th>
+                                            Order Date
+                                        </th>
+
+                                        <th>
+                                            Customer Name
+                                        </th>
+
+                                        <th class="text-center">
+                                            Order Amount
+                                        </th>
+
+                                        <th class="text-center">
+                                            Billing Amount
+                                        </th>
+
+                                        <th class="text-center"
+                                            width="12%">
+                                            Status
+                                        </th>
+
+                                        <th class="text-center"
+                                            width="15%">
+                                            Action
+                                        </th>
+
+                                    </tr>
+
+                                </thead>
+
+
+                                <tbody>
+
+                                    @if (Model._orderList != null)
+                                    {
+
+                                        foreach (var item in Model._orderList)
+                                        {
+
+                                            <tr class="gradeX">
+
+
+                                                <!-- SR NO -->
+
+                                                <td></td>
+
+
+                                                <!-- ORDER NO -->
+
+                                                <td>
+
+                                                    <a href="@Url.Action(
+                                                        "OrderDetail",
+                                                        "ManageOrder",
+                                                        new
+                                                        {
+                                                            OrderID = item.OrderID,
+                                                            FromDate = Request.QueryString["FromDate"],
+                                                            ToDate = Request.QueryString["ToDate"]
+                                                        })">
+
+                                                        <b>
+                                                            @item.OrderNo
+                                                        </b>
+
+                                                    </a>
+
+                                                </td>
+
+
+                                                <!-- ORDER DATE -->
+
+                                                <td>
+                                                    @item.OrderDate
+                                                </td>
+
+
+                                                <!-- CUSTOMER -->
+
+                                                <td>
+                                                    @item.CustomerName
+                                                </td>
+
+
+                                                <!-- ORDER AMOUNT -->
+
+                                                <td class="text-center">
+
+                                                    <i class="fa fa-inr"
+                                                       aria-hidden="true"></i>
+
+                                                    &nbsp;
+
+                                                    @item.Total
+
+                                                </td>
+
+
+                                                <!-- BILLING AMOUNT -->
+
+                                                <td class="text-center">
+
+                                                    <i class="fa fa-inr"
+                                                       aria-hidden="true"></i>
+
+                                                    &nbsp;
+
+                                                    @item.BillingAmount
+
+                                                </td>
+
+
+                                                <!-- STATUS -->
+
+                                                <td class="text-center">
+
+
+                                                    @if (item.OrderStatus == "Placed")
+                                                    {
+
+                                                        <span class="label label-warning"
+                                                              style="font-size:12px;">
+
+                                                            Placed
+
+                                                        </span>
+
+                                                    }
+                                                    else if (item.OrderStatus == "Accepted")
+                                                    {
+
+                                                        <span class="label label-primary"
+                                                              style="font-size:12px;">
+
+                                                            Accepted
+
+                                                        </span>
+
+                                                    }
+                                                    else if (
+                                                        item.OrderStatus == "Declined"
+                                                        ||
+                                                        item.OrderStatus == "Cancelled by Admin"
+                                                        ||
+                                                        item.OrderStatus == "Cancelled by user")
+                                                    {
+
+                                                        <span class="label label-danger"
+                                                              style="font-size:12px;">
+
+                                                            @item.OrderStatus
+
+                                                        </span>
+
+                                                    }
+                                                    else if (item.OrderStatus == "Ready")
+                                                    {
+
+                                                        <span class="label label-info"
+                                                              style="font-size:12px;">
+
+                                                            Ready
+
+                                                        </span>
+
+                                                    }
+                                                    else if (item.OrderStatus == "Delivered")
+                                                    {
+
+                                                        <span class="label label-default"
+                                                              style="font-size:12px;">
+
+                                                            Delivered
+
+                                                        </span>
+
+                                                    }
+                                                    else
+                                                    {
+
+                                                        <span class="label label-default"
+                                                              style="font-size:12px;">
+
+                                                            @item.OrderStatus
+
+                                                        </span>
+
+                                                    }
+
+                                                </td>
+
+
+                                                <!-- ACTION -->
+
+                                                <td class="text-center">
+
+                                                    <!-- VIEW -->
+
+                                                    <span class="label label-primary"
+                                                          style="font-size:12px;">
+
+                                                        <a title="View Details"
+                                                           style="color:#ffffff;"
+                                                           href="@Url.Action(
+                                                               "OrderDetail",
+                                                               "ManageOrder",
+                                                               new
+                                                               {
+                                                                   OrderID = item.OrderID,
+                                                                   FromDate = Request.QueryString["FromDate"],
+                                                                   ToDate = Request.QueryString["ToDate"]
+                                                               })">
+
+                                                            <i class="fa fa-eye"></i>
+
+                                                            &nbsp; View Details
+
+                                                        </a>
+
+                                                    </span>
+
+
+                                                    &nbsp;&nbsp;
+
+
+                                                    <!-- PRINT -->
+
+                                                    <span class="label label-success"
+                                                          style="font-size:12px;">
+
+                                                        <a title="Print Order"
+                                                           style="color:#ffffff;"
+                                                           href="@Url.Action(
+                                                               "POSPrint",
+                                                               "ManageOrder",
+                                                               new
+                                                               {
+                                                                   OrderID = item.OrderID
+                                                               })"
+                                                           target="_blank">
+
+                                                            <i class="fa fa-print"></i>
+
+                                                            &nbsp; Print
+
+                                                        </a>
+
+                                                    </span>
+
+
+                                                </td>
+
+                                            </tr>
+
+                                        }
+
+                                    }
+
+                                </tbody>
+
+
+                                <tfoot>
+                                </tfoot>
+
+                            </table>
+
+                        </div>
+
+                    }
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+@section Styles {
+
+    @Styles.Render("~/plugins/sweetAlertStyles")
+
+    @Styles.Render("~/plugins/dateRangeStyles")
+
+    @Styles.Render("~/plugins/dataPickerStyles")
+
+    @Styles.Render("~/Content/plugins/iCheck/iCheckStyles")
+
+    @Styles.Render("~/plugins/awesomeCheckboxStyles")
+
+    @Styles.Render("~/plugins/select2Styles")
+
+    @Styles.Render("~/plugins/footableStyles")
+
+    @Styles.Render("~/Content/plugins/dataTables/dataTablesStyles")
+
+
+    <style>
+
+        /* ==========================================
+           TABLE HORIZONTAL SCROLL
+        ========================================== */
+
+        .table-scroll-wrapper {
+            width: 100%;
+            overflow-x: auto !important;
+            overflow-y: hidden;
+            -webkit-overflow-scrolling: touch;
+            scrollbar-width: auto;
+        }
+
+
+            .table-scroll-wrapper table {
+                min-width: 1100px !important;
+                width: 100%;
+            }
+
+
+            .table-scroll-wrapper th,
+            .table-scroll-wrapper td {
+                vertical-align: middle;
+                white-space: nowrap;
+            }
+
+
+        /* ==========================================
+           DATATABLE WRAPPER
+        ========================================== */
+
+        #orderTable_wrapper {
+            width: 100%;
+        }
+
+
+            #orderTable_wrapper .dataTables_length {
+                margin-bottom: 10px;
+            }
+
+
+            #orderTable_wrapper .dataTables_filter {
+                margin-bottom: 10px;
+            }
+
+
+            #orderTable_wrapper .dataTables_info {
+                margin-top: 10px;
+            }
+
+
+            #orderTable_wrapper .dataTables_paginate {
+                margin-top: 10px;
+            }
+
+
+        /* ==========================================
+           MOBILE
+        ========================================== */
+
+        @@media (max-width: 767px) {
+
+            .table-scroll-wrapper {
+                width: 100% !important;
+                max-width: 100% !important;
+                overflow-x: scroll !important;
+                overflow-y: hidden;
+                -webkit-overflow-scrolling: touch;
+            }
+
+
+                .table-scroll-wrapper table {
+                    min-width: 1100px !important;
+                    width: 1100px !important;
+                }
+
+
+                .table-scroll-wrapper th,
+                .table-scroll-wrapper td {
+                    white-space: nowrap !important;
+                    padding: 8px;
+                }
+
+
+            .ibox-content {
+                overflow: hidden;
+            }
+        }
+    </style>
+
+}
+
+
+@section Scripts {
+
+    @Scripts.Render("~/plugins/sweetAlert")
+
+    @Scripts.Render("~/plugins/dateRange")
+
+    @Scripts.Render("~/plugins/dataPicker")
+
+    @Scripts.Render("~/plugins/iCheck")
+
+    @Scripts.Render("~/plugins/select2")
+
+    @Scripts.Render("~/plugins/validate")
+
+    @Scripts.Render("~/plugins/footable")
+
+    @Scripts.Render("~/plugins/dataTables")
+
+
+    <script type="text/javascript">
+
+        $(document).ready(function () {
+
+
+            // =====================================================
+            // SUCCESS / ERROR MESSAGE
+            // =====================================================
+
+            if ('@TempData["SuccessMessage"]' != '') {
+
+                sweetAlert(
+                    "Success!!",
+                    '@TempData["SuccessMessage"]',
+                    "success"
+                );
+
+            }
+
+
+            if ('@TempData["ErrorMessage"]' != '') {
+
+                sweetAlert(
+                    "Error!!",
+                    '@TempData["ErrorMessage"]',
+                    "error"
+                );
+
+            }
+
+
+            // =====================================================
+            // FROM DATE
+            // =====================================================
+
+            $('#data_1 .input-group.date').datepicker({
+
+                todayBtn: "linked",
+
+                keyboardNavigation: false,
+
+                forceParse: false,
+
+                calendarWeeks: true,
+
+                autoclose: true,
+
+                format: "dd/mm/yyyy"
+
+            });
+
+
+            // =====================================================
+            // TO DATE
+            // =====================================================
+
+            $('#data_2 .input-group.date').datepicker({
+
+                todayBtn: "linked",
+
+                keyboardNavigation: false,
+
+                forceParse: false,
+
+                calendarWeeks: true,
+
+                autoclose: true,
+
+                format: "dd/mm/yyyy"
+
+            });
+
+
+            // =====================================================
+            // DATATABLE
+            // =====================================================
+
+            $('#orderTable').DataTable({
+
+                pageLength: 25,
+
+
+                lengthMenu: [
+
+                    [10, 25, 50, 100, -1],
+
+                    [10, 25, 50, 100, "All"]
+
+                ],
+
+
+                dom:
+                    '<"html5buttons"B>lTfgitp',
+
+
+                buttons: [
+
+                    {
+                        extend: 'copy'
+                    },
+
+                    {
+                        extend: 'csv'
+                    },
+
+                    {
+                        extend: 'excel',
+
+                        title: 'Order List'
+
+                    },
+
+                    {
+                        extend: 'pdf',
+
+                        title: 'Order List'
+
+                    },
+
+                    {
+
+                        extend: 'print',
+
+                        customize: function (win) {
+
+                            $(win.document.body)
+                                .addClass('white-bg');
+
+                            $(win.document.body)
+                                .css(
+                                    'font-size',
+                                    '10px'
+                                );
+
+
+                            $(win.document.body)
+                                .find('table')
+                                .addClass('compact')
+                                .css(
+                                    'font-size',
+                                    'inherit'
+                                );
+
+                        }
+
+                    }
+
+                ],
+
+
+                order: [
+
+                    [1, 'desc']
+
+                ],
+
+
+                columnDefs: [
+
+                    {
+
+                        targets: 0,
+
+                        orderable: false,
+
+                        searchable: false
+
+                    },
+
+                    {
+
+                        targets: 6,
+
+                        orderable: false
+
+                    },
+
+                    {
+
+                        targets: 7,
+
+                        orderable: false,
+
+                        searchable: false
+
+                    }
+
+                ],
+
+
+                // =================================================
+                // CORRECT SR NO WITH PAGINATION
+                // =================================================
+
+                drawCallback: function () {
+
+                    var api = this.api();
+
+                    var pageInfo = api.page.info();
+
+                    var start = pageInfo.start;
+
+
+                    api.column(0, {
+
+                        page: 'current'
+
+                    })
+                    .nodes()
+                    .each(function (cell, i) {
+
+                        cell.innerHTML =
+                            start + i + 1;
+
+                    });
+
+                }
+
+            });
+
+
+        });
+
+
+        // =========================================================
+        // PRINT ORDER
+        // =========================================================
+
+        function fnPrintOrderSummary(OrderID) {
+
+            $.ajax({
+
+                type: "GET",
+
+                url:
+                    '@Url.Action(
+                        "PrintOrder",
+                        "ManageOrder"
+                    )',
+
+                contentType:
+                    'application/json; charset=utf-8',
+
+                data: {
+
+                    OrderID: OrderID
+
+                },
+
+                dataType: "JSON",
+
+                success: function (data) {
+
+                },
+
+                error: function () {
+
+                }
+
+            });
+
+        }
+
+    </script>
+
+}

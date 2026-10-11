@@ -1,0 +1,202 @@
+﻿@model Notification_Model
+@{
+    ViewBag.Title = "Notification";
+}
+
+<div class="row wrapper border-bottom white-bg page-heading">
+    <div class="col-lg-10">
+        <h2>Notification Master</h2>
+        <ol class="breadcrumb">
+            <li>
+                <a href="@Url.Action("Index", "Home")">Dashboard</a>
+            </li>
+            <li class="active">
+                <strong>Notification Item</strong>
+            </li>
+        </ol>
+    </div>
+    <div class="col-lg-2">
+    </div>
+</div>
+<div class="wrapper wrapper-content animated fadeInRight">
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="ibox float-e-margins">
+                <div class="ibox-content">
+                    @using (Html.BeginForm("Notificationlist", "Notification",FormMethod.Post, new { @id = "frmAddUpdate", @enctype = "multipart/form-data" }))
+                    {
+                        <div class="form-group row">
+                            <div class="col-sm-3">
+                                @Html.Label("Name")
+                                @Html.DropDownListFor(model => model.SelectedValues, new MultiSelectList(CommonHelper.GetCustomerList(), "Value", "Text"), new { @class = "select2_demo_1 form-control", multiple = "multiple" })
+                            </div>
+                        </div>
+
+                        <div class="form-group row">
+                            <div class="col-sm-3">
+                                @Html.Label("Tittle")
+                                @Html.TextBoxFor(m => m.Tittle, new { @class = "form-control", @id = "Tittle", @name = "Tittle", @autocomplete = "off", @placeholder = "Enter Tittle" })
+                            </div>
+                        </div>
+
+                        <div class="form-group row">
+                            <div class="col-sm-3">
+                                @Html.Label("Message")
+                                @Html.TextBoxFor(m => m.Message, new { @class = "form-control", @id = "Message", @name = "Message", @autocomplete = "off", @placeholder = "Enter Message" })
+                            </div>
+                        </div>
+
+
+                        <div class="form-group row">
+                            <div class="col-sm-3">
+                                @Html.Label("Image")
+                                @Html.TextBoxFor(m => m.Image, new { @class = "form-control", @id = "Image", @name = "Image", @autocomplete = "off", @placeholder = "Enter Image Url" })
+                            </div>
+                        </div>
+
+                        <div class="form-group row">
+                            <div class="col-md-3" style="margin-top: 23px;">
+                                <button type="submit" id="btnSubmit" class="btn btn-primary" onkeypress="return event.keyCode != 13;"><i class="fa fa-save"></i>&nbsp; Save</button>
+                                &nbsp;&nbsp;
+                                <a class="btn btn-white" href="@Url.Action("Notificationlist", "Notification")"><i class="fa fa-refresh"></i>&nbsp; Reset</a>
+                            </div>
+                        </div>
+                    }
+                </div>
+
+
+
+
+
+
+
+
+
+                @*<div class="ibox-content">
+                        <div class="form-group row">
+                                <div class="col-sm-3">
+                                    @Html.Label("Name")
+                                    @Html.DropDownListFor(model => model.UserId, new MultiSelectList(CommonHelper.GetCustomerList(), "Value", "Text"), new { @class = "select2_demo_1 form-control", multiple = "multiple" })
+                                </div>
+                         </div>
+
+
+                        <div class="form-group row">
+                            <div class="col-sm-3">
+                                @Html.Label("Tittle")
+                                @Html.TextBoxFor(m => m.Tittle, new { @class = "form-control", @id = "Tittle", @name = "Tittle", @autocomplete = "off", @placeholder = "Enter Tittle" })
+                            </div>
+                        </div>
+
+                        <div class="form-group row">
+                            <div class="col-sm-3">
+                                @Html.Label("Message")
+                                @Html.TextBoxFor(m => m.Message, new { @class = "form-control", @id = "Message", @name = "Message", @autocomplete = "off", @placeholder = "Enter Message" })
+                            </div>
+                        </div>
+
+
+                        <div class="form-group row">
+                            <div class="col-sm-3">
+                                @Html.Label("Image")
+                                @Html.TextBoxFor(m => m.Image, new { @class = "form-control", @id = "Image", @name = "Image", @autocomplete = "off", @placeholder = "Enter Image Url" })
+                            </div>
+                        </div>
+
+                        <div class="form-group row">
+
+                            <div class="col-md-3" style="margin-top: 23px;">
+                                <button type="submit" id="btnSubmit" class="btn btn-primary" onclick="location.href='@Url.Action("NotificationSend", "Notification")'"><i class="fa fa-save"></i>&nbsp; Submit</button>&nbsp;&nbsp;
+                            </div>
+                        </div>
+                    </div>*@
+
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Styles {
+    @Styles.Render("~/Content/plugins/dataTables/dataTablesStyles")
+    @Styles.Render("~/plugins/sweetAlertStyles")
+    @Styles.Render("~/plugins/dataPickerStyles")
+    @Styles.Render("~/plugins/select2Styles")
+    @Styles.Render("~/plugins/select2Styles")
+}
+
+@section Scripts {
+    @Scripts.Render("~/plugins/dataTables")
+    @Scripts.Render("~/plugins/sweetAlert")
+    @Scripts.Render("~/plugins/validate")
+    @Scripts.Render("~/plugins/dataPicker")
+    @Scripts.Render("~/plugins/select2")
+
+    <script type="text/javascript">
+        $(document).ready(function () {
+
+            if ($("#Tittle").val() == 0) {
+                $("#Tittle").val("");
+            }
+
+            if ($("#Message").val() == 0) {
+                $("#Message").val("");
+            }
+
+            if ($("#Image").val() == 0) {
+                $("#Image").val("");
+            }
+
+            $(".select2_demo_1").select2();
+
+            if ('@TempData["SuccessMessage"]' != '') {
+                sweetAlert("Sucesss!!", '@TempData["SuccessMessage"]', "success");
+            }
+            if ('@TempData["ErrorMessage"]' != '') {
+                sweetAlert("Error!!", '@TempData["ErrorMessage"]', "error");
+            }
+
+            //$('.dataTables-example').DataTable({
+            //    pageLength: 25,
+            //    dom: '<"html5buttons"B>lTfgitp',
+            //    buttons: [
+            //        { extend: 'copy' },
+            //        { extend: 'csv' },
+            //        { extend: 'excel', title: 'ExampleFile' },
+            //        { extend: 'pdf', title: 'ExampleFile' },
+            //        {
+            //            extend: 'print',
+            //            customize: function (win) {
+            //                $(win.document.body).addClass('white-bg');
+            //                $(win.document.body).css('font-size', '10px');
+
+            //                $(win.document.body).find('table')
+            //                    .addClass('compact')
+            //                    .css('font-size', 'inherit');
+            //            }
+            //        }
+            //    ]
+            //});
+
+            ////$("#frmAddUpdate").validate({
+            //    rules: {
+            //        Amount: {
+            //            required: true
+            //        },
+            //        UserID: {
+            //            required: true
+            //        }
+            //    },
+            //    messages: {
+            //        Amount: {
+            //            required: "Please enter amount",
+            //        },
+            //        UserID: {
+            //            required: "Please select customer",
+            //        }
+            //    }
+            //});
+
+        });
+
+    </script>
+}

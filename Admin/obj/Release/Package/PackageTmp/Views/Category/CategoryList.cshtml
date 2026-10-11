@@ -1,0 +1,292 @@
+﻿@model Category_Model
+@{
+    ViewBag.Title = "Category";
+    int count = 1;
+}
+
+<div class="row wrapper border-bottom white-bg page-heading">
+    <div class="col-lg-10">
+        <h2>Category</h2>
+        <ol class="breadcrumb">
+            <li>
+                <a href="@Url.Action("Index", "Home")">Dashboard</a>
+            </li>
+            <li class="active">
+                <strong>Manage Category</strong>
+            </li>
+        </ol>
+    </div>
+    <div class="col-lg-2">
+    </div>
+</div>
+<div class="wrapper wrapper-content animated fadeInRight">
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="ibox float-e-margins">
+                <div class="ibox-title">
+                    <h5>Add | Edit Category</h5>
+                </div>
+                <div class="ibox-content">
+                    @using (Html.BeginForm("SaveCategory", "Category", FormMethod.Post, new { @id = "frmAddUpdate", @enctype = "multipart/form-data" }))
+                    {
+                        @Html.HiddenFor(m => m.CategoryID)
+                        <div class="form-group row">
+                            <div class="col-sm-6">
+                                @Html.Label("Category Name") <b style="color:red"> *</b>
+                                @Html.TextBoxFor(m => m.CategoryName, new { @class = "form-control", @id = "CategoryName", @name = "CategoryName", @autocomplete = "off", @onkeyup = "return fnCheckCategoryName()" })
+                                <label id="CategoryError" class="error">Entered category is already exist</label>
+                            </div>
+                            <div class="col-md-3" style="margin-top: 23px;">
+                                <button type="submit" id="btnSubmit" class="btn btn-primary" onkeypress="return event.keyCode != 13;"><i class="fa fa-save"></i>&nbsp; Save</button>
+                                &nbsp;&nbsp;
+                                <a class="btn btn-white" href="@Url.Action("CategoryList", "Category")"><i class="fa fa-refresh"></i>&nbsp; Reset</a>
+                            </div>
+                        </div>
+                    }
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="ibox float-e-margins">
+                <div class="ibox-title">
+                    <h5>Category List</h5>
+                </div>
+                <div class="ibox-content">
+                    <table class="table table-striped table-bordered table-hover dataTables-example">
+                        <thead>
+                            <tr>
+                                <th width="5%">Sr.No</th>
+                                <th>Category Name</th>
+                                <th class="text-center" width="30%">Action</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @if (Model != null)
+                            {
+                                foreach (var item in Model._categoryList)
+                                {
+
+                                    <tr class="gradeX">
+                                        <td>@count</td>
+                                        <td>@item.CategoryName</td>
+                                        <td class="text-center">
+                                            @if (item.IsActive.Equals("1"))
+                                            {
+                                                <span class="label label-primary" style="font-size:12px;background-color:#629607;">
+                                                    <a style="color: #ffffff;" title="Active" onclick="ManageCategory(@item.CategoryID, 0)">
+                                                        Active
+                                                    </a>
+                                                </span>
+                                            }
+                                            else
+                                            {
+                                                <span class="label label-danger" style="font-size: 12px">
+                                                    <a style="color: #ffffff;" title="InActive" onclick="ManageCategory(@item.CategoryID, 1)">
+                                                        InActive
+                                                    </a>
+                                                </span>
+                                            }
+                                        <span>&nbsp;&nbsp;</span>
+                                            <span class="label label-danger" style="font-size:12px;">
+                                                <a title="Delete Category" style="color: #ffffff;" href="#" onclick="fnDeleteCategory(@item.CategoryID)">
+                                                    <i class="fa fa-trash"></i>&nbsp; Delete
+                                                </a>
+                                            </span>
+                                        </td>
+                                        
+
+                                        @*<td>
+            <span class="label label-primary" style="font-size:12px;">
+                <a title="Edit Details" style="color: #ffffff;" href="#" onclick="EditDetail(@item.CategoryID, '@item.CategoryName', '@item.MobileNo')">
+                    <i class="fa fa-pencil"></i>&nbsp; Edit
+                </a>
+            </span>
+        </td>*@
+                                    </tr>
+                                    count++;
+                                }
+                            }
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+@section Styles {
+    @Styles.Render("~/Content/plugins/dataTables/dataTablesStyles")
+    @Styles.Render("~/plugins/sweetAlertStyles")
+    @Styles.Render("~/plugins/dataPickerStyles")
+    @Styles.Render("~/plugins/select2Styles")
+}
+
+@section Scripts {
+    @Scripts.Render("~/plugins/dataTables")
+    @Scripts.Render("~/plugins/sweetAlert")
+    @Scripts.Render("~/plugins/validate")
+    @Scripts.Render("~/plugins/dataPicker")
+    @Scripts.Render("~/plugins/select2")
+
+<script type="text/javascript">
+        $(document).ready(function () {
+
+            $("#CategoryError").hide();
+
+            if ('@TempData["SuccessMessage"]' != '') {
+                sweetAlert("Sucesss!!", '@TempData["SuccessMessage"]', "success");
+            }
+            if ('@TempData["ErrorMessage"]' != '') {
+                sweetAlert("Error!!", '@TempData["ErrorMessage"]', "error");
+            }
+
+            $('.dataTables-example').DataTable({
+                pageLength: 25,
+                dom: '<"html5buttons"B>lTfgitp',
+                buttons: [
+                    { extend: 'copy' },
+                    { extend: 'csv' },
+                    { extend: 'excel', title: 'ExampleFile' },
+                    { extend: 'pdf', title: 'ExampleFile' },
+                    {
+                        extend: 'print',
+                        customize: function (win) {
+                            $(win.document.body).addClass('white-bg');
+                            $(win.document.body).css('font-size', '10px');
+
+                            $(win.document.body).find('table')
+                                .addClass('compact')
+                                .css('font-size', 'inherit');
+                        }
+                    }
+                ]
+            });
+
+            $("#frmAddUpdate").validate({
+                rules: {
+                    CategoryName: {
+                        required: true
+                    }
+                },
+                messages: {
+                    CategoryName: {
+                        required: "Please enter category name"
+                    }
+                }
+            });
+
+
+        });
+
+        function fnCheckCategoryName() {
+            debugger;
+            if ($("#CategoryID").val() == "0") {
+                var CategoryName = $("#CategoryName").val();
+                $.ajax({
+                    url: '@Url.Action("CheckCategoryIsExist", "Category")',
+                    type: "GET",
+                    dataType: "JSON",
+                    data: { CategoryName: CategoryName },
+                    success: function (data) {
+                        if (data != '') {
+                            $("#CategoryError").show();
+                            document.getElementById("btnSubmit").disabled = true;
+                        } else {
+                            $("#CategoryError").hide();
+                            document.getElementById("btnSubmit").disabled = false;
+                        }
+                    }
+                });
+            }
+        }
+    function ManageCategory(CatID, Status) {
+            var action = "";
+            debugger;
+            if (Status=="0") {
+                action = "Inactive";
+            } else {
+                action = "Active";
+            }
+            swal({
+                title: "Are you sure?",
+                text: "You want to " + action + " this category?",
+                type: "warning",
+                showCancelButton: true,
+                confirmButtonColor: "#DD6B55",
+                confirmButtonText: "Yes, " + status + " it!",
+                closeOnConfirm: false
+            }, function (e) {
+                if (e) {
+                    $.ajax(
+                    {
+                        type: "Post",
+                        datatype: "JSON",
+                        url: "@Url.Action("ManageCategory", "Category")",
+                            data: { Cat_Id: CatID,  Status: Status },
+                        success: function (data) {
+                            if (data != null) {
+                                swal(data);
+                                window.setTimeout(function () {
+                                    location.reload();
+                                }, 1000);
+                            }
+                        },
+                        error: function (event, xhr, options, exc) {
+                            swal("An error occured please try again !!");
+                        }
+                    });
+                }
+            });
+    }
+
+
+
+
+
+
+
+    function fnDeleteCategory(CategoryId) {
+            swal({
+                title: "Are you sure?",
+                text: "You want to delete this Category?",
+                type: "warning",
+                showCancelButton: true,
+                confirmButtonColor: "#DD6B55",
+                closeOnConfirm: false
+            }, function (e) {
+                if (e) {
+                    $.ajax(
+                        {
+                            type: "GET",
+                            url: '@Url.Action("DeleteCategory", "Category")',
+                            contentType: 'application/json; charset=utf-8',
+                            data: { CategoryId: CategoryId },
+                            dataType: "JSON",
+                            success: function (data) {
+                                swal(data);
+                                window.setTimeout(function () {
+                                    location.reload();
+                                }, 1000);
+                            },
+                            error: function (event, xhr, options, exc) {
+                                sweetAlert("Error!!", data, "error");
+                            }
+                        });
+                }
+            });
+        }
+
+
+        //function EditDetail(CategoryID, CategoryName, MobileNo) {
+        //    $('.form-group').removeClass('has-success has-error');
+        //    $('.help-block').remove();
+        //    $('#frmAddUpdate')[0].reset();
+        //    $('#frmAddUpdate').validate().resetForm();
+        //    $("#CategoryID").val(CategoryID);
+        //    $("#CategoryName").val(CategoryName);
+        //    $("#MobileNo").val(MobileNo);
+        //}
+
+</script>
+}

@@ -1,0 +1,59 @@
+﻿CREATE TABLE [Transaction](
+
+   [TransactionID] INT IDENTITY(1,1) NOT NULL PRIMARY KEY,
+   [PayID] INT,
+   [Amount] INT DECIMAL(18,2),
+   [Balance] INT DECIMAL(18,2),
+   [EntryDate] DATETIME,
+   [GivenBy] INT
+ 
+ )
+
+ CREATE TABLE[Balance](
+
+   [PayID] INT IDENTITY(1,1) NOT NULL PRIMARY KEY,
+   [Balance] INT DECIMAL(18,2),
+   [GivenBy] INT,
+   [GivenDate] DATETIME,
+   [CreatedDate] DATETIME,
+   [UpdatedDate] DATETIME,
+ )
+
+ CREATE TABLE[ItemMaster](
+
+   [ItemID]  INT IDENTITY(1,1) NOT NULL PRIMARY KEY,
+   [ItemName] varchar(MAX),
+   [UOM] INT NOT NULL,
+   [Category] varchar(MAX),
+   [ImagePath] varchar(MAX),
+   [CreatedDate] DATETIME,
+   [UpdatedDate] DATETIME,
+   [EntryBy] varchar(MAX)
+
+   
+ )
+
+ CREATE TABLE [Purchase](
+
+   [PurchaseID] INT IDENTITY(1,1) NOT NULL PRIMARY KEY,
+   [ItemID] INT,
+   [Weight] INT DECIMAL(18,2),
+   [Price] INT DECIMAL(18,2),
+   [EntryDate] DATETIME,
+   [ActionBy] INT
+ 
+ )
+
+  CREATE TABLE [Category](
+
+   [CategoryID] INT IDENTITY(1,1) NOT NULL PRIMARY KEY,
+   [CategoryName] varchar(500)
+ 
+ )
+
+  CREATE TABLE [Unit](
+
+   [UnitID] INT IDENTITY(1,1) NOT NULL PRIMARY KEY,
+   [UnitName] varchar(MAX)
+ 
+ )

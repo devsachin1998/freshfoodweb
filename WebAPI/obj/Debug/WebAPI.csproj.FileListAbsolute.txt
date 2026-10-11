@@ -1,0 +1,280 @@
+F:\Poonam\Admin\Admin\WebAPI\bin\ApplicationInsights.config
+F:\Poonam\Admin\Admin\WebAPI\bin\roslyn\csc.exe
+F:\Poonam\Admin\Admin\WebAPI\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+F:\Poonam\Admin\Admin\WebAPI\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+F:\Poonam\Admin\Admin\WebAPI\bin\roslyn\Microsoft.CodeAnalysis.dll
+F:\Poonam\Admin\Admin\WebAPI\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+F:\Poonam\Admin\Admin\WebAPI\bin\roslyn\Microsoft.CSharp.Core.targets
+F:\Poonam\Admin\Admin\WebAPI\bin\roslyn\Microsoft.VisualBasic.Core.targets
+F:\Poonam\Admin\Admin\WebAPI\bin\roslyn\System.Collections.Immutable.dll
+F:\Poonam\Admin\Admin\WebAPI\bin\roslyn\System.Reflection.Metadata.dll
+F:\Poonam\Admin\Admin\WebAPI\bin\roslyn\vbc.exe
+F:\Poonam\Admin\Admin\WebAPI\bin\roslyn\VBCSCompiler.exe
+F:\Poonam\Admin\Admin\WebAPI\bin\roslyn\VBCSCompiler.exe.config
+F:\Poonam\Admin\Admin\WebAPI\bin\WebAPI.dll.config
+F:\Poonam\Admin\Admin\WebAPI\bin\WebAPI.dll
+F:\Poonam\Admin\Admin\WebAPI\bin\WebAPI.pdb
+F:\Poonam\Admin\Admin\WebAPI\bin\Antlr3.Runtime.dll
+F:\Poonam\Admin\Admin\WebAPI\bin\EntityFramework.dll
+F:\Poonam\Admin\Admin\WebAPI\bin\EntityFramework.SqlServer.dll
+F:\Poonam\Admin\Admin\WebAPI\bin\itextsharp.dll
+F:\Poonam\Admin\Admin\WebAPI\bin\Microsoft.AI.Agent.Intercept.dll
+F:\Poonam\Admin\Admin\WebAPI\bin\Microsoft.AI.DependencyCollector.dll
+F:\Poonam\Admin\Admin\WebAPI\bin\Microsoft.AI.PerfCounterCollector.dll
+F:\Poonam\Admin\Admin\WebAPI\bin\Microsoft.AI.ServerTelemetryChannel.dll
+F:\Poonam\Admin\Admin\WebAPI\bin\Microsoft.AI.Web.dll
+F:\Poonam\Admin\Admin\WebAPI\bin\Microsoft.AI.WindowsServer.dll
+F:\Poonam\Admin\Admin\WebAPI\bin\Microsoft.ApplicationInsights.dll
+F:\Poonam\Admin\Admin\WebAPI\bin\Microsoft.AspNet.Identity.Core.dll
+F:\Poonam\Admin\Admin\WebAPI\bin\Microsoft.AspNet.Identity.EntityFramework.dll
+F:\Poonam\Admin\Admin\WebAPI\bin\Microsoft.AspNet.Identity.Owin.dll
+F:\Poonam\Admin\Admin\WebAPI\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+F:\Poonam\Admin\Admin\WebAPI\bin\Microsoft.Owin.dll
+F:\Poonam\Admin\Admin\WebAPI\bin\Microsoft.Owin.Host.SystemWeb.dll
+F:\Poonam\Admin\Admin\WebAPI\bin\Microsoft.Owin.Security.Cookies.dll
+F:\Poonam\Admin\Admin\WebAPI\bin\Microsoft.Owin.Security.dll
+F:\Poonam\Admin\Admin\WebAPI\bin\Microsoft.Owin.Security.Facebook.dll
+F:\Poonam\Admin\Admin\WebAPI\bin\Microsoft.Owin.Security.Google.dll
+F:\Poonam\Admin\Admin\WebAPI\bin\Microsoft.Owin.Security.MicrosoftAccount.dll
+F:\Poonam\Admin\Admin\WebAPI\bin\Microsoft.Owin.Security.OAuth.dll
+F:\Poonam\Admin\Admin\WebAPI\bin\Microsoft.Owin.Security.Twitter.dll
+F:\Poonam\Admin\Admin\WebAPI\bin\Microsoft.Web.Infrastructure.dll
+F:\Poonam\Admin\Admin\WebAPI\bin\Newtonsoft.Json.dll
+F:\Poonam\Admin\Admin\WebAPI\bin\Owin.dll
+F:\Poonam\Admin\Admin\WebAPI\bin\System.Net.Http.Formatting.dll
+F:\Poonam\Admin\Admin\WebAPI\bin\System.Web.Helpers.dll
+F:\Poonam\Admin\Admin\WebAPI\bin\System.Web.Http.dll
+F:\Poonam\Admin\Admin\WebAPI\bin\System.Web.Http.Owin.dll
+F:\Poonam\Admin\Admin\WebAPI\bin\System.Web.Http.WebHost.dll
+F:\Poonam\Admin\Admin\WebAPI\bin\System.Web.Mvc.dll
+F:\Poonam\Admin\Admin\WebAPI\bin\System.Web.Optimization.dll
+F:\Poonam\Admin\Admin\WebAPI\bin\System.Web.Razor.dll
+F:\Poonam\Admin\Admin\WebAPI\bin\System.Web.WebPages.Deployment.dll
+F:\Poonam\Admin\Admin\WebAPI\bin\System.Web.WebPages.dll
+F:\Poonam\Admin\Admin\WebAPI\bin\System.Web.WebPages.Razor.dll
+F:\Poonam\Admin\Admin\WebAPI\bin\WebGrease.dll
+F:\Poonam\Admin\Admin\WebAPI\bin\itextsharp.xml
+F:\Poonam\Admin\Admin\WebAPI\bin\Microsoft.AI.DependencyCollector.xml
+F:\Poonam\Admin\Admin\WebAPI\bin\Microsoft.AI.ServerTelemetryChannel.xml
+F:\Poonam\Admin\Admin\WebAPI\bin\Microsoft.AI.Web.xml
+F:\Poonam\Admin\Admin\WebAPI\bin\Microsoft.AI.WindowsServer.xml
+F:\Poonam\Admin\Admin\WebAPI\bin\Microsoft.ApplicationInsights.xml
+F:\Poonam\Admin\Admin\WebAPI\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+F:\Poonam\Admin\Admin\WebAPI\bin\Newtonsoft.Json.xml
+F:\Poonam\Admin\Admin\WebAPI\bin\System.Net.Http.Formatting.xml
+F:\Poonam\Admin\Admin\WebAPI\bin\System.Web.Helpers.xml
+F:\Poonam\Admin\Admin\WebAPI\bin\System.Web.Http.xml
+F:\Poonam\Admin\Admin\WebAPI\bin\System.Web.Http.WebHost.xml
+F:\Poonam\Admin\Admin\WebAPI\bin\System.Web.Mvc.xml
+F:\Poonam\Admin\Admin\WebAPI\bin\System.Web.Optimization.xml
+F:\Poonam\Admin\Admin\WebAPI\bin\System.Web.Razor.xml
+F:\Poonam\Admin\Admin\WebAPI\bin\System.Web.WebPages.xml
+F:\Poonam\Admin\Admin\WebAPI\bin\System.Web.WebPages.Deployment.xml
+F:\Poonam\Admin\Admin\WebAPI\bin\System.Web.WebPages.Razor.xml
+F:\Poonam\Admin\Admin\WebAPI\bin\Antlr3.Runtime.pdb
+F:\Poonam\Admin\Admin\WebAPI\bin\EntityFramework.xml
+F:\Poonam\Admin\Admin\WebAPI\bin\EntityFramework.SqlServer.xml
+F:\Poonam\Admin\Admin\WebAPI\bin\Microsoft.AspNet.Identity.Core.xml
+F:\Poonam\Admin\Admin\WebAPI\bin\Microsoft.AspNet.Identity.Owin.xml
+F:\Poonam\Admin\Admin\WebAPI\bin\Microsoft.AspNet.Identity.EntityFramework.xml
+F:\Poonam\Admin\Admin\WebAPI\bin\Microsoft.Owin.xml
+F:\Poonam\Admin\Admin\WebAPI\bin\Microsoft.Owin.Host.SystemWeb.xml
+F:\Poonam\Admin\Admin\WebAPI\bin\Microsoft.Owin.Security.xml
+F:\Poonam\Admin\Admin\WebAPI\bin\Microsoft.Owin.Security.Facebook.xml
+F:\Poonam\Admin\Admin\WebAPI\bin\Microsoft.Owin.Security.Cookies.xml
+F:\Poonam\Admin\Admin\WebAPI\bin\Microsoft.Owin.Security.OAuth.xml
+F:\Poonam\Admin\Admin\WebAPI\bin\Microsoft.Owin.Security.Google.xml
+F:\Poonam\Admin\Admin\WebAPI\bin\Microsoft.Owin.Security.Twitter.xml
+F:\Poonam\Admin\Admin\WebAPI\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
+F:\Poonam\Admin\Admin\WebAPI\bin\System.Web.Http.Owin.xml
+F:\Poonam\Admin\Admin\WebAPI\obj\Debug\WebAPI.csprojResolveAssemblyReference.cache
+F:\Poonam\Admin\Admin\WebAPI\obj\Debug\WebAPI.dll
+F:\Poonam\Admin\Admin\WebAPI\obj\Debug\WebAPI.pdb
+F:\Fresh Food\Project\Admin\WebAPI\bin\ApplicationInsights.config
+F:\Fresh Food\Project\Admin\WebAPI\bin\roslyn\csc.exe
+F:\Fresh Food\Project\Admin\WebAPI\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+F:\Fresh Food\Project\Admin\WebAPI\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+F:\Fresh Food\Project\Admin\WebAPI\bin\roslyn\Microsoft.CodeAnalysis.dll
+F:\Fresh Food\Project\Admin\WebAPI\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+F:\Fresh Food\Project\Admin\WebAPI\bin\roslyn\Microsoft.CSharp.Core.targets
+F:\Fresh Food\Project\Admin\WebAPI\bin\roslyn\Microsoft.VisualBasic.Core.targets
+F:\Fresh Food\Project\Admin\WebAPI\bin\roslyn\System.Collections.Immutable.dll
+F:\Fresh Food\Project\Admin\WebAPI\bin\roslyn\System.Reflection.Metadata.dll
+F:\Fresh Food\Project\Admin\WebAPI\bin\roslyn\vbc.exe
+F:\Fresh Food\Project\Admin\WebAPI\bin\roslyn\VBCSCompiler.exe
+F:\Fresh Food\Project\Admin\WebAPI\bin\roslyn\VBCSCompiler.exe.config
+F:\Fresh Food\Project\Admin\WebAPI\bin\WebAPI.dll.config
+F:\Fresh Food\Project\Admin\WebAPI\bin\WebAPI.dll
+F:\Fresh Food\Project\Admin\WebAPI\bin\WebAPI.pdb
+F:\Fresh Food\Project\Admin\WebAPI\bin\Antlr3.Runtime.dll
+F:\Fresh Food\Project\Admin\WebAPI\bin\EntityFramework.dll
+F:\Fresh Food\Project\Admin\WebAPI\bin\EntityFramework.SqlServer.dll
+F:\Fresh Food\Project\Admin\WebAPI\bin\itextsharp.dll
+F:\Fresh Food\Project\Admin\WebAPI\bin\Microsoft.AI.Agent.Intercept.dll
+F:\Fresh Food\Project\Admin\WebAPI\bin\Microsoft.AI.DependencyCollector.dll
+F:\Fresh Food\Project\Admin\WebAPI\bin\Microsoft.AI.PerfCounterCollector.dll
+F:\Fresh Food\Project\Admin\WebAPI\bin\Microsoft.AI.ServerTelemetryChannel.dll
+F:\Fresh Food\Project\Admin\WebAPI\bin\Microsoft.AI.Web.dll
+F:\Fresh Food\Project\Admin\WebAPI\bin\Microsoft.AI.WindowsServer.dll
+F:\Fresh Food\Project\Admin\WebAPI\bin\Microsoft.ApplicationInsights.dll
+F:\Fresh Food\Project\Admin\WebAPI\bin\Microsoft.AspNet.Identity.Core.dll
+F:\Fresh Food\Project\Admin\WebAPI\bin\Microsoft.AspNet.Identity.EntityFramework.dll
+F:\Fresh Food\Project\Admin\WebAPI\bin\Microsoft.AspNet.Identity.Owin.dll
+F:\Fresh Food\Project\Admin\WebAPI\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+F:\Fresh Food\Project\Admin\WebAPI\bin\Microsoft.Owin.dll
+F:\Fresh Food\Project\Admin\WebAPI\bin\Microsoft.Owin.Host.SystemWeb.dll
+F:\Fresh Food\Project\Admin\WebAPI\bin\Microsoft.Owin.Security.Cookies.dll
+F:\Fresh Food\Project\Admin\WebAPI\bin\Microsoft.Owin.Security.dll
+F:\Fresh Food\Project\Admin\WebAPI\bin\Microsoft.Owin.Security.Facebook.dll
+F:\Fresh Food\Project\Admin\WebAPI\bin\Microsoft.Owin.Security.Google.dll
+F:\Fresh Food\Project\Admin\WebAPI\bin\Microsoft.Owin.Security.MicrosoftAccount.dll
+F:\Fresh Food\Project\Admin\WebAPI\bin\Microsoft.Owin.Security.OAuth.dll
+F:\Fresh Food\Project\Admin\WebAPI\bin\Microsoft.Owin.Security.Twitter.dll
+F:\Fresh Food\Project\Admin\WebAPI\bin\Microsoft.Web.Infrastructure.dll
+F:\Fresh Food\Project\Admin\WebAPI\bin\Newtonsoft.Json.dll
+F:\Fresh Food\Project\Admin\WebAPI\bin\Owin.dll
+F:\Fresh Food\Project\Admin\WebAPI\bin\System.Net.Http.Formatting.dll
+F:\Fresh Food\Project\Admin\WebAPI\bin\System.Web.Helpers.dll
+F:\Fresh Food\Project\Admin\WebAPI\bin\System.Web.Http.dll
+F:\Fresh Food\Project\Admin\WebAPI\bin\System.Web.Http.Owin.dll
+F:\Fresh Food\Project\Admin\WebAPI\bin\System.Web.Http.WebHost.dll
+F:\Fresh Food\Project\Admin\WebAPI\bin\System.Web.Mvc.dll
+F:\Fresh Food\Project\Admin\WebAPI\bin\System.Web.Optimization.dll
+F:\Fresh Food\Project\Admin\WebAPI\bin\System.Web.Razor.dll
+F:\Fresh Food\Project\Admin\WebAPI\bin\System.Web.WebPages.Deployment.dll
+F:\Fresh Food\Project\Admin\WebAPI\bin\System.Web.WebPages.dll
+F:\Fresh Food\Project\Admin\WebAPI\bin\System.Web.WebPages.Razor.dll
+F:\Fresh Food\Project\Admin\WebAPI\bin\WebGrease.dll
+F:\Fresh Food\Project\Admin\WebAPI\bin\itextsharp.xml
+F:\Fresh Food\Project\Admin\WebAPI\bin\Microsoft.AI.DependencyCollector.xml
+F:\Fresh Food\Project\Admin\WebAPI\bin\Microsoft.AI.ServerTelemetryChannel.xml
+F:\Fresh Food\Project\Admin\WebAPI\bin\Microsoft.AI.Web.xml
+F:\Fresh Food\Project\Admin\WebAPI\bin\Microsoft.AI.WindowsServer.xml
+F:\Fresh Food\Project\Admin\WebAPI\bin\Microsoft.ApplicationInsights.xml
+F:\Fresh Food\Project\Admin\WebAPI\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+F:\Fresh Food\Project\Admin\WebAPI\bin\Newtonsoft.Json.xml
+F:\Fresh Food\Project\Admin\WebAPI\bin\System.Net.Http.Formatting.xml
+F:\Fresh Food\Project\Admin\WebAPI\bin\System.Web.Helpers.xml
+F:\Fresh Food\Project\Admin\WebAPI\bin\System.Web.Http.xml
+F:\Fresh Food\Project\Admin\WebAPI\bin\System.Web.Http.WebHost.xml
+F:\Fresh Food\Project\Admin\WebAPI\bin\System.Web.Mvc.xml
+F:\Fresh Food\Project\Admin\WebAPI\bin\System.Web.Optimization.xml
+F:\Fresh Food\Project\Admin\WebAPI\bin\System.Web.Razor.xml
+F:\Fresh Food\Project\Admin\WebAPI\bin\System.Web.WebPages.xml
+F:\Fresh Food\Project\Admin\WebAPI\bin\System.Web.WebPages.Deployment.xml
+F:\Fresh Food\Project\Admin\WebAPI\bin\System.Web.WebPages.Razor.xml
+F:\Fresh Food\Project\Admin\WebAPI\bin\Antlr3.Runtime.pdb
+F:\Fresh Food\Project\Admin\WebAPI\bin\EntityFramework.xml
+F:\Fresh Food\Project\Admin\WebAPI\bin\EntityFramework.SqlServer.xml
+F:\Fresh Food\Project\Admin\WebAPI\bin\Microsoft.AspNet.Identity.Core.xml
+F:\Fresh Food\Project\Admin\WebAPI\bin\Microsoft.AspNet.Identity.Owin.xml
+F:\Fresh Food\Project\Admin\WebAPI\bin\Microsoft.AspNet.Identity.EntityFramework.xml
+F:\Fresh Food\Project\Admin\WebAPI\bin\Microsoft.Owin.xml
+F:\Fresh Food\Project\Admin\WebAPI\bin\Microsoft.Owin.Host.SystemWeb.xml
+F:\Fresh Food\Project\Admin\WebAPI\bin\Microsoft.Owin.Security.xml
+F:\Fresh Food\Project\Admin\WebAPI\bin\Microsoft.Owin.Security.Facebook.xml
+F:\Fresh Food\Project\Admin\WebAPI\bin\Microsoft.Owin.Security.Cookies.xml
+F:\Fresh Food\Project\Admin\WebAPI\bin\Microsoft.Owin.Security.OAuth.xml
+F:\Fresh Food\Project\Admin\WebAPI\bin\Microsoft.Owin.Security.Google.xml
+F:\Fresh Food\Project\Admin\WebAPI\bin\Microsoft.Owin.Security.Twitter.xml
+F:\Fresh Food\Project\Admin\WebAPI\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
+F:\Fresh Food\Project\Admin\WebAPI\bin\System.Web.Http.Owin.xml
+F:\Fresh Food\Project\Admin\WebAPI\obj\Debug\WebAPI.dll
+F:\Fresh Food\Project\Admin\WebAPI\obj\Debug\WebAPI.pdb
+E:\FreshFood\NewFF\FreshFood\FreshFood\FreshFood2022\WebAPI\bin\ApplicationInsights.config
+E:\FreshFood\NewFF\FreshFood\FreshFood\FreshFood2022\WebAPI\bin\roslyn\csc.exe
+E:\FreshFood\NewFF\FreshFood\FreshFood\FreshFood2022\WebAPI\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+E:\FreshFood\NewFF\FreshFood\FreshFood\FreshFood2022\WebAPI\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+E:\FreshFood\NewFF\FreshFood\FreshFood\FreshFood2022\WebAPI\bin\roslyn\Microsoft.CodeAnalysis.dll
+E:\FreshFood\NewFF\FreshFood\FreshFood\FreshFood2022\WebAPI\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+E:\FreshFood\NewFF\FreshFood\FreshFood\FreshFood2022\WebAPI\bin\roslyn\Microsoft.CSharp.Core.targets
+E:\FreshFood\NewFF\FreshFood\FreshFood\FreshFood2022\WebAPI\bin\roslyn\Microsoft.VisualBasic.Core.targets
+E:\FreshFood\NewFF\FreshFood\FreshFood\FreshFood2022\WebAPI\bin\roslyn\System.Collections.Immutable.dll
+E:\FreshFood\NewFF\FreshFood\FreshFood\FreshFood2022\WebAPI\bin\roslyn\System.Reflection.Metadata.dll
+E:\FreshFood\NewFF\FreshFood\FreshFood\FreshFood2022\WebAPI\bin\roslyn\vbc.exe
+E:\FreshFood\NewFF\FreshFood\FreshFood\FreshFood2022\WebAPI\bin\roslyn\VBCSCompiler.exe
+E:\FreshFood\NewFF\FreshFood\FreshFood\FreshFood2022\WebAPI\bin\roslyn\VBCSCompiler.exe.config
+E:\FreshFood\NewFF\FreshFood\FreshFood\FreshFood2022\WebAPI\bin\WebAPI.dll.config
+E:\FreshFood\NewFF\FreshFood\FreshFood\FreshFood2022\WebAPI\bin\WebAPI.dll
+E:\FreshFood\NewFF\FreshFood\FreshFood\FreshFood2022\WebAPI\bin\WebAPI.pdb
+E:\FreshFood\NewFF\FreshFood\FreshFood\FreshFood2022\WebAPI\bin\Antlr3.Runtime.dll
+E:\FreshFood\NewFF\FreshFood\FreshFood\FreshFood2022\WebAPI\bin\EntityFramework.dll
+E:\FreshFood\NewFF\FreshFood\FreshFood\FreshFood2022\WebAPI\bin\EntityFramework.SqlServer.dll
+E:\FreshFood\NewFF\FreshFood\FreshFood\FreshFood2022\WebAPI\bin\itextsharp.dll
+E:\FreshFood\NewFF\FreshFood\FreshFood\FreshFood2022\WebAPI\bin\Microsoft.AI.Agent.Intercept.dll
+E:\FreshFood\NewFF\FreshFood\FreshFood\FreshFood2022\WebAPI\bin\Microsoft.AI.DependencyCollector.dll
+E:\FreshFood\NewFF\FreshFood\FreshFood\FreshFood2022\WebAPI\bin\Microsoft.AI.PerfCounterCollector.dll
+E:\FreshFood\NewFF\FreshFood\FreshFood\FreshFood2022\WebAPI\bin\Microsoft.AI.ServerTelemetryChannel.dll
+E:\FreshFood\NewFF\FreshFood\FreshFood\FreshFood2022\WebAPI\bin\Microsoft.AI.Web.dll
+E:\FreshFood\NewFF\FreshFood\FreshFood\FreshFood2022\WebAPI\bin\Microsoft.AI.WindowsServer.dll
+E:\FreshFood\NewFF\FreshFood\FreshFood\FreshFood2022\WebAPI\bin\Microsoft.ApplicationInsights.dll
+E:\FreshFood\NewFF\FreshFood\FreshFood\FreshFood2022\WebAPI\bin\Microsoft.AspNet.Identity.Core.dll
+E:\FreshFood\NewFF\FreshFood\FreshFood\FreshFood2022\WebAPI\bin\Microsoft.AspNet.Identity.EntityFramework.dll
+E:\FreshFood\NewFF\FreshFood\FreshFood\FreshFood2022\WebAPI\bin\Microsoft.AspNet.Identity.Owin.dll
+E:\FreshFood\NewFF\FreshFood\FreshFood\FreshFood2022\WebAPI\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+E:\FreshFood\NewFF\FreshFood\FreshFood\FreshFood2022\WebAPI\bin\Microsoft.Owin.dll
+E:\FreshFood\NewFF\FreshFood\FreshFood\FreshFood2022\WebAPI\bin\Microsoft.Owin.Host.SystemWeb.dll
+E:\FreshFood\NewFF\FreshFood\FreshFood\FreshFood2022\WebAPI\bin\Microsoft.Owin.Security.Cookies.dll
+E:\FreshFood\NewFF\FreshFood\FreshFood\FreshFood2022\WebAPI\bin\Microsoft.Owin.Security.dll
+E:\FreshFood\NewFF\FreshFood\FreshFood\FreshFood2022\WebAPI\bin\Microsoft.Owin.Security.Facebook.dll
+E:\FreshFood\NewFF\FreshFood\FreshFood\FreshFood2022\WebAPI\bin\Microsoft.Owin.Security.Google.dll
+E:\FreshFood\NewFF\FreshFood\FreshFood\FreshFood2022\WebAPI\bin\Microsoft.Owin.Security.MicrosoftAccount.dll
+E:\FreshFood\NewFF\FreshFood\FreshFood\FreshFood2022\WebAPI\bin\Microsoft.Owin.Security.OAuth.dll
+E:\FreshFood\NewFF\FreshFood\FreshFood\FreshFood2022\WebAPI\bin\Microsoft.Owin.Security.Twitter.dll
+E:\FreshFood\NewFF\FreshFood\FreshFood\FreshFood2022\WebAPI\bin\Microsoft.Web.Infrastructure.dll
+E:\FreshFood\NewFF\FreshFood\FreshFood\FreshFood2022\WebAPI\bin\Newtonsoft.Json.dll
+E:\FreshFood\NewFF\FreshFood\FreshFood\FreshFood2022\WebAPI\bin\Owin.dll
+E:\FreshFood\NewFF\FreshFood\FreshFood\FreshFood2022\WebAPI\bin\System.Net.Http.Formatting.dll
+E:\FreshFood\NewFF\FreshFood\FreshFood\FreshFood2022\WebAPI\bin\System.Web.Helpers.dll
+E:\FreshFood\NewFF\FreshFood\FreshFood\FreshFood2022\WebAPI\bin\System.Web.Http.dll
+E:\FreshFood\NewFF\FreshFood\FreshFood\FreshFood2022\WebAPI\bin\System.Web.Http.Owin.dll
+E:\FreshFood\NewFF\FreshFood\FreshFood\FreshFood2022\WebAPI\bin\System.Web.Http.WebHost.dll
+E:\FreshFood\NewFF\FreshFood\FreshFood\FreshFood2022\WebAPI\bin\System.Web.Mvc.dll
+E:\FreshFood\NewFF\FreshFood\FreshFood\FreshFood2022\WebAPI\bin\System.Web.Optimization.dll
+E:\FreshFood\NewFF\FreshFood\FreshFood\FreshFood2022\WebAPI\bin\System.Web.Razor.dll
+E:\FreshFood\NewFF\FreshFood\FreshFood\FreshFood2022\WebAPI\bin\System.Web.WebPages.Deployment.dll
+E:\FreshFood\NewFF\FreshFood\FreshFood\FreshFood2022\WebAPI\bin\System.Web.WebPages.dll
+E:\FreshFood\NewFF\FreshFood\FreshFood\FreshFood2022\WebAPI\bin\System.Web.WebPages.Razor.dll
+E:\FreshFood\NewFF\FreshFood\FreshFood\FreshFood2022\WebAPI\bin\WebApi.OutputCache.Core.dll
+E:\FreshFood\NewFF\FreshFood\FreshFood\FreshFood2022\WebAPI\bin\WebApi.OutputCache.V2.dll
+E:\FreshFood\NewFF\FreshFood\FreshFood\FreshFood2022\WebAPI\bin\WebGrease.dll
+E:\FreshFood\NewFF\FreshFood\FreshFood\FreshFood2022\WebAPI\bin\itextsharp.xml
+E:\FreshFood\NewFF\FreshFood\FreshFood\FreshFood2022\WebAPI\bin\Microsoft.AI.DependencyCollector.xml
+E:\FreshFood\NewFF\FreshFood\FreshFood\FreshFood2022\WebAPI\bin\Microsoft.AI.ServerTelemetryChannel.xml
+E:\FreshFood\NewFF\FreshFood\FreshFood\FreshFood2022\WebAPI\bin\Microsoft.AI.Web.xml
+E:\FreshFood\NewFF\FreshFood\FreshFood\FreshFood2022\WebAPI\bin\Microsoft.AI.WindowsServer.xml
+E:\FreshFood\NewFF\FreshFood\FreshFood\FreshFood2022\WebAPI\bin\Microsoft.ApplicationInsights.xml
+E:\FreshFood\NewFF\FreshFood\FreshFood\FreshFood2022\WebAPI\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+E:\FreshFood\NewFF\FreshFood\FreshFood\FreshFood2022\WebAPI\bin\Newtonsoft.Json.xml
+E:\FreshFood\NewFF\FreshFood\FreshFood\FreshFood2022\WebAPI\bin\System.Net.Http.Formatting.xml
+E:\FreshFood\NewFF\FreshFood\FreshFood\FreshFood2022\WebAPI\bin\System.Web.Helpers.xml
+E:\FreshFood\NewFF\FreshFood\FreshFood\FreshFood2022\WebAPI\bin\System.Web.Http.xml
+E:\FreshFood\NewFF\FreshFood\FreshFood\FreshFood2022\WebAPI\bin\System.Web.Http.WebHost.xml
+E:\FreshFood\NewFF\FreshFood\FreshFood\FreshFood2022\WebAPI\bin\System.Web.Mvc.xml
+E:\FreshFood\NewFF\FreshFood\FreshFood\FreshFood2022\WebAPI\bin\System.Web.Optimization.xml
+E:\FreshFood\NewFF\FreshFood\FreshFood\FreshFood2022\WebAPI\bin\System.Web.Razor.xml
+E:\FreshFood\NewFF\FreshFood\FreshFood\FreshFood2022\WebAPI\bin\System.Web.WebPages.xml
+E:\FreshFood\NewFF\FreshFood\FreshFood\FreshFood2022\WebAPI\bin\System.Web.WebPages.Deployment.xml
+E:\FreshFood\NewFF\FreshFood\FreshFood\FreshFood2022\WebAPI\bin\System.Web.WebPages.Razor.xml
+E:\FreshFood\NewFF\FreshFood\FreshFood\FreshFood2022\WebAPI\bin\WebApi.OutputCache.V2.xml
+E:\FreshFood\NewFF\FreshFood\FreshFood\FreshFood2022\WebAPI\bin\Antlr3.Runtime.pdb
+E:\FreshFood\NewFF\FreshFood\FreshFood\FreshFood2022\WebAPI\bin\EntityFramework.xml
+E:\FreshFood\NewFF\FreshFood\FreshFood\FreshFood2022\WebAPI\bin\EntityFramework.SqlServer.xml
+E:\FreshFood\NewFF\FreshFood\FreshFood\FreshFood2022\WebAPI\bin\Microsoft.AspNet.Identity.Core.xml
+E:\FreshFood\NewFF\FreshFood\FreshFood\FreshFood2022\WebAPI\bin\Microsoft.AspNet.Identity.Owin.xml
+E:\FreshFood\NewFF\FreshFood\FreshFood\FreshFood2022\WebAPI\bin\Microsoft.AspNet.Identity.EntityFramework.xml
+E:\FreshFood\NewFF\FreshFood\FreshFood\FreshFood2022\WebAPI\bin\Microsoft.Owin.xml
+E:\FreshFood\NewFF\FreshFood\FreshFood\FreshFood2022\WebAPI\bin\Microsoft.Owin.Host.SystemWeb.xml
+E:\FreshFood\NewFF\FreshFood\FreshFood\FreshFood2022\WebAPI\bin\Microsoft.Owin.Security.xml
+E:\FreshFood\NewFF\FreshFood\FreshFood\FreshFood2022\WebAPI\bin\Microsoft.Owin.Security.Facebook.xml
+E:\FreshFood\NewFF\FreshFood\FreshFood\FreshFood2022\WebAPI\bin\Microsoft.Owin.Security.Cookies.xml
+E:\FreshFood\NewFF\FreshFood\FreshFood\FreshFood2022\WebAPI\bin\Microsoft.Owin.Security.OAuth.xml
+E:\FreshFood\NewFF\FreshFood\FreshFood\FreshFood2022\WebAPI\bin\Microsoft.Owin.Security.Google.xml
+E:\FreshFood\NewFF\FreshFood\FreshFood\FreshFood2022\WebAPI\bin\Microsoft.Owin.Security.Twitter.xml
+E:\FreshFood\NewFF\FreshFood\FreshFood\FreshFood2022\WebAPI\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
+E:\FreshFood\NewFF\FreshFood\FreshFood\FreshFood2022\WebAPI\bin\System.Web.Http.Owin.xml
+E:\FreshFood\NewFF\FreshFood\FreshFood\FreshFood2022\WebAPI\obj\Debug\WebAPI.csproj.AssemblyReference.cache
+E:\FreshFood\NewFF\FreshFood\FreshFood\FreshFood2022\WebAPI\obj\Debug\WebAPI.csproj.CoreCompileInputs.cache
+E:\FreshFood\NewFF\FreshFood\FreshFood\FreshFood2022\WebAPI\obj\Debug\WebAPI.csproj.CopyComplete
+E:\FreshFood\NewFF\FreshFood\FreshFood\FreshFood2022\WebAPI\obj\Debug\WebAPI.dll
+E:\FreshFood\NewFF\FreshFood\FreshFood\FreshFood2022\WebAPI\obj\Debug\WebAPI.pdb

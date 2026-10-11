@@ -1,0 +1,734 @@
+﻿@{
+    ViewBag.Title = "ItemList";
+    int count = 1;
+    string ImagePath = "~/Content/ItemImages/";
+}
+
+<div class="row wrapper border-bottom white-bg page-heading">
+
+    <div class="col-lg-10">
+
+        <h2>Reports</h2>
+
+        <ol class="breadcrumb">
+
+            <li>
+                <a href="@Url.Action("Index", "Home")">
+                    Dashboard
+                </a>
+            </li>
+
+            <li class="active">
+                <strong>Manage Item</strong>
+            </li>
+
+        </ol>
+
+    </div>
+
+    <div class="col-lg-2">
+    </div>
+
+</div>
+
+
+<div class="wrapper wrapper-content animated fadeInRight">
+
+    <div class="row">
+
+        <div class="col-lg-12">
+
+            <div class="ibox float-e-margins">
+
+                <div class="ibox-title">
+
+                    <h5>Item List</h5>
+
+                    <div class="ibox-tools">
+
+                        <a title="Add New Item"
+                           href="@Url.Action("AddItem", "Item")"
+                           class="btn btn-primary">
+
+                            <i class="fa fa-plus"
+                               aria-hidden="true"></i>
+
+                            &nbsp; Add New Item
+
+                        </a>
+
+                    </div>
+
+                </div>
+
+
+                <div class="ibox-content">
+
+                    @using (Html.BeginForm(
+                        "ItemList",
+                        "Item",
+                        FormMethod.Get,
+                        new
+                        {
+                            @id = "frmAddUpdate",
+                            @enctype = "multipart/form-data"
+                        }))
+                    {
+
+                        <!-- SEARCH -->
+                        <div class="row">
+
+                            <div class="col-md-3">
+
+                                @Html.Label("Category")
+
+                                <b style="color:red">
+                                    *
+                                </b>
+
+                                @Html.DropDownList(
+                                    "CategoryID",
+                                    CommonHelper.GetCategory(),
+                                    new
+                                    {
+                                        @class = "form-control"
+                                    })
+
+                            </div>
+
+
+                            <div class="col-md-3"
+                                 style="margin-top:22px;">
+
+                                <button type="submit"
+                                        id="btnSubmit"
+                                        class="btn btn-primary">
+
+                                    Search
+
+                                </button>
+
+                                &nbsp;&nbsp;
+
+                                <a class="btn btn-white"
+                                   href="@Url.Action("ItemList", "Item")">
+
+                                    Reset
+
+                                </a>
+
+                            </div>
+
+                        </div>
+
+
+                        <hr />
+
+
+                        <!-- TABLE -->
+                        <div class="item-table-wrapper">
+
+                            <table id="itemTable"
+                                   class="table table-striped table-bordered table-hover dataTables-example"
+                                   style="width:100%; min-width:900px;">
+
+                                <thead>
+
+                                    <tr>
+
+                                        <th width="5%">
+                                            Sr.No
+                                        </th>
+
+                                        <th width="10%">
+                                            Image
+                                        </th>
+
+                                        <th>
+                                            Item Name
+                                        </th>
+
+                                        <th>
+                                            Category
+                                        </th>
+
+                                        <th width="20%">
+                                            Weight
+                                        </th>
+
+                                        <th class="text-center"
+                                            width="5%">
+                                            Action
+                                        </th>
+
+                                    </tr>
+
+                                </thead>
+
+
+                                <tbody>
+
+                                    @if (Model != null && Model.Count != 0)
+                                    {
+
+                                        foreach (var item in Model)
+                                        {
+
+                                            <tr class="gradeX">
+
+                                                <!-- SR NO -->
+                                                <td></td>
+
+
+                                                <!-- IMAGE -->
+                                                <td>
+
+                                                    @if (!string.IsNullOrEmpty(item.ImagePath))
+                                                    {
+
+                                                        <img src="@Url.Content(ImagePath + item.ImagePath)"
+                                                             style="width:100px;
+                                                                    height:100px;
+                                                                    object-fit:cover;"
+                                                             class="img-thumbnail m-b-md selectedImg" />
+
+                                                    }
+
+                                                </td>
+
+
+                                                <!-- ITEM NAME -->
+                                                <td>
+
+                                                    @item.ItemName
+
+                                                </td>
+
+
+                                                <!-- CATEGORY -->
+                                                <td>
+
+                                                    @item.CategoryName
+
+                                                </td>
+
+
+                                                <!-- WEIGHT -->
+                                                <td>
+
+                                                    @if (item._subitemList != null)
+                                                    {
+
+                                                        foreach (var w in item._subitemList)
+                                                        {
+
+                                                            <span>
+                                                                @w.Weight @w.UOMName
+                                                            </span>
+
+                                                            <br />
+
+                                                        }
+
+                                                    }
+
+                                                </td>
+
+
+                                                <!-- ACTION -->
+                                                <td class="text-center">
+
+                                                    <div>
+
+                                                        <!-- EDIT -->
+                                                        <span class="label label-primary"
+                                                              style="font-size:12px;">
+
+                                                            <a title="Edit Details"
+                                                               style="color:#ffffff;"
+                                                               href="@Url.Action(
+                                                                   "AddItem",
+                                                                   "Item",
+                                                                   new
+                                                                   {
+                                                                       ItemID = item.ItemID
+                                                                   })">
+
+                                                                <i class="fa fa-pencil"></i>
+
+                                                                &nbsp; Edit
+
+                                                            </a>
+
+                                                        </span>
+
+
+                                                        <br />
+                                                        <br />
+
+
+                                                        <!-- DELETE -->
+                                                        <span class="label label-danger"
+                                                              style="font-size:12px;">
+
+                                                            <a title="Delete Item"
+                                                               style="color:#ffffff;"
+                                                               href="javascript:void(0);"
+                                                               onclick="fnDeleteItem(@item.ItemID)">
+
+                                                                <i class="fa fa-trash"></i>
+
+                                                                &nbsp; Delete
+
+                                                            </a>
+
+                                                        </span>
+
+                                                    </div>
+
+                                                </td>
+
+                                            </tr>
+
+                                            count++;
+
+                                        }
+
+                                    }
+
+                                </tbody>
+
+
+                                <tfoot>
+                                </tfoot>
+
+                            </table>
+
+                        </div>
+
+                    }
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+@section Styles {
+
+    @Styles.Render("~/plugins/sweetAlertStyles")
+
+    @Styles.Render("~/plugins/dateRangeStyles")
+
+    @Styles.Render("~/plugins/dataPickerStyles")
+
+    @Styles.Render("~/Content/plugins/iCheck/iCheckStyles")
+
+    @Styles.Render("~/plugins/awesomeCheckboxStyles")
+
+    @Styles.Render("~/plugins/select2Styles")
+
+    @Styles.Render("~/plugins/footableStyles")
+
+    @Styles.Render("~/Content/plugins/dataTables/dataTablesStyles")
+
+
+    <style>
+
+        /* =========================================
+           TABLE HORIZONTAL SCROLL
+        ========================================= */
+
+        .item-table-wrapper {
+            width: 100%;
+            overflow-x: auto;
+            overflow-y: hidden;
+            -webkit-overflow-scrolling: touch;
+        }
+
+
+        #itemTable {
+            min-width: 900px !important;
+            width: 100%;
+        }
+
+
+            #itemTable th,
+            #itemTable td {
+                vertical-align: middle;
+            }
+
+
+        /* =========================================
+           MOBILE
+        ========================================= */
+
+        @@media (max-width: 767px) {
+
+            .item-table-wrapper {
+                width: 100%;
+                overflow-x: auto !important;
+                overflow-y: hidden;
+                -webkit-overflow-scrolling: touch;
+            }
+
+
+            #itemTable {
+                min-width: 900px !important;
+            }
+
+
+                #itemTable th,
+                #itemTable td {
+                    white-space: nowrap;
+                    padding: 8px;
+                }
+
+
+                    #itemTable td:nth-child(5) {
+                        white-space: normal;
+                    }
+        }
+
+
+        /* =========================================
+           DATATABLE WIDTH
+        ========================================= */
+
+        #itemTable_wrapper {
+            width: 100%;
+        }
+
+
+            #itemTable_wrapper .dataTables_length {
+                margin-bottom: 10px;
+            }
+
+
+            #itemTable_wrapper .dataTables_filter {
+                margin-bottom: 10px;
+            }
+
+
+            #itemTable_wrapper .dataTables_info {
+                margin-top: 10px;
+            }
+
+
+            #itemTable_wrapper .dataTables_paginate {
+                margin-top: 10px;
+            }
+    </style>
+
+}
+
+
+@section Scripts {
+
+    @Scripts.Render("~/plugins/sweetAlert")
+
+    @Scripts.Render("~/plugins/dateRange")
+
+    @Scripts.Render("~/plugins/dataPicker")
+
+    @Scripts.Render("~/plugins/iCheck")
+
+    @Scripts.Render("~/plugins/select2")
+
+    @Scripts.Render("~/plugins/validate")
+
+    @Scripts.Render("~/plugins/footable")
+
+    @Scripts.Render("~/plugins/dataTables")
+
+
+    <script type="text/javascript">
+
+        $(document).ready(function () {
+
+
+            // =====================================================
+            // TEMP DATA MESSAGE
+            // =====================================================
+
+            $("#Countryerror").hide();
+
+
+            if ('@TempData["SuccessMessage"]' != '') {
+
+                sweetAlert(
+                    "Success!!",
+                    '@TempData["SuccessMessage"]',
+                    "success"
+                );
+
+            }
+
+
+            if ('@TempData["ErrorMessage"]' != '') {
+
+                sweetAlert(
+                    "Error!!",
+                    '@TempData["ErrorMessage"]',
+                    "error"
+                );
+
+            }
+
+
+            // =====================================================
+            // DATATABLE
+            // =====================================================
+
+            var itemTable = $('#itemTable').DataTable({
+
+                pageLength: 25,
+
+
+                lengthMenu: [
+
+                    [10, 25, 50, 100, -1],
+
+                    [10, 25, 50, 100, "All"]
+
+                ],
+
+
+                searching: true,
+
+                paging: true,
+
+                ordering: true,
+
+                info: true,
+
+
+                autoWidth: false,
+
+
+                order: [
+
+                    [2, 'asc']
+
+                ],
+
+
+                columnDefs: [
+
+                    {
+                        targets: 0,
+
+                        orderable: false,
+
+                        searchable: false
+                    },
+
+                    {
+                        targets: 1,
+
+                        orderable: false,
+
+                        searchable: false
+                    },
+
+                    {
+                        targets: 4,
+
+                        orderable: false
+                    },
+
+                    {
+                        targets: 5,
+
+                        orderable: false,
+
+                        searchable: false
+                    }
+
+                ],
+
+
+                language: {
+
+                    search: "",
+
+                    searchPlaceholder: "Search item...",
+
+                    lengthMenu: "Show _MENU_ entries",
+
+                    info: "Showing _START_ to _END_ of _TOTAL_ entries",
+
+                    infoEmpty:
+                        "Showing 0 to 0 of 0 entries",
+
+                    zeroRecords:
+                        "No matching items found",
+
+                    emptyTable:
+                        "No items available"
+
+                },
+
+
+                dom:
+
+                    '<"row"<"col-sm-6"l><"col-sm-6"f>>' +
+
+                    'rt' +
+
+                    '<"row"<"col-sm-6"i><"col-sm-6"p>>',
+
+
+                // =================================================
+                // CORRECT SR NO WITH PAGINATION
+                // =================================================
+
+                drawCallback: function () {
+
+                    var api = this.api();
+
+                    var pageInfo = api.page.info();
+
+                    var start = pageInfo.start;
+
+
+                    api.column(0, {
+                        page: 'current'
+                    })
+                    .nodes()
+                    .each(function (cell, i) {
+
+                        cell.innerHTML =
+                            start + i + 1;
+
+                    });
+
+                }
+
+            });
+
+
+        });
+
+
+        // =========================================================
+        // DELETE ITEM
+        // =========================================================
+
+        function fnDeleteItem(ItemID) {
+
+            if (!ItemID) {
+
+                return;
+
+            }
+
+
+            swal({
+
+                title: "Are you sure?",
+
+                text:
+                    "You want to delete this item?",
+
+                type: "warning",
+
+                showCancelButton: true,
+
+                confirmButtonColor: "#DD6B55",
+
+                confirmButtonText:
+                    "Yes, delete it!",
+
+                cancelButtonText:
+                    "Cancel",
+
+                closeOnConfirm: false
+
+            }, function (e) {
+
+
+                if (e) {
+
+                    $.ajax({
+
+                        type: "GET",
+
+                        url:
+                            '@Url.Action("DeleteItem", "Item")',
+
+                        contentType:
+                            'application/json; charset=utf-8',
+
+                        data: {
+
+                            ItemID: ItemID
+
+                        },
+
+                        dataType: "JSON",
+
+
+                        success: function (data) {
+
+
+                            if (data) {
+
+                                swal({
+
+                                    title: "Success!",
+
+                                    text:
+                                        "Item deleted successfully.",
+
+                                    type: "success"
+
+                                });
+
+
+                                setTimeout(function () {
+
+                                    location.reload();
+
+                                }, 1000);
+
+                            }
+                            else {
+
+                                swal(
+                                    "Error!!",
+                                    "Unable to delete item.",
+                                    "error"
+                                );
+
+                            }
+
+                        },
+
+
+                        error: function () {
+
+                            sweetAlert(
+                                "Error!!",
+                                "Something went wrong while deleting item.",
+                                "error"
+                            );
+
+                        }
+
+                    });
+
+                }
+
+            });
+
+        }
+
+    </script>
+
+}

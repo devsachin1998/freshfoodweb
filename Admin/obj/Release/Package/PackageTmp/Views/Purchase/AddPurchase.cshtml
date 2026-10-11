@@ -1,0 +1,191 @@
+﻿@model Purchase
+@{
+    ViewBag.Title = "AddPurchase";
+}
+
+<div class="row wrapper border-bottom white-bg page-heading">
+    <div class="col-lg-10">
+        <h2>Purchase Master</h2>
+        <ol class="breadcrumb">
+            <li>
+                <a href="@Url.Action("Index", "Home")">Dashboard</a>
+            </li>
+            <li>
+                <a href="@Url.Action("PurchaseList", "Purchase")"> Purchase List </a>
+            </li>
+            <li class="active">
+                <strong>Manage Purchase </strong>
+            </li>
+        </ol>
+    </div>
+    <div class="col-lg-2">
+    </div>
+</div>
+<div class="wrapper wrapper-content animated fadeInRight">
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="ibox float-e-margins">
+                @using (Html.BeginForm("SavePurchase", "Purchase", FormMethod.Post, new { @id = "frmAddUpdate", @enctype = "multipart/form-data" }))
+                {
+                    @Html.HiddenFor(m => m.PurchaseID)
+                    <div class="col-lg-12">
+                        <div class="ibox ">
+                            <div class="ibox-content">
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <ul class="sortable-list connectList agile-list">
+                                            <li class="success-element">
+                                                @Html.Label("Purchase Information")
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                  
+                                    <div class="col-sm-4">
+                                        @Html.Label("Weight") <b style="color:red">*</b>
+                                        @Html.TextBoxFor(m => m.Weight, new { @placeholder = "Enter Weight", @class = "form-control", @id = "Weight", @name = "Weight" })
+                                       
+                                    </div>
+                                    <div class="col-sm-4">
+                                            @Html.Label("Price") <b style="color:red">*</b>
+                                            @Html.TextBoxFor(m => m.Price, new { @placeholder = "Enter Price", @class = "form-control", @id = "Price", @name = "Price" })
+
+                                    </div>
+                                </div>
+
+                                
+
+                                <hr />
+                                <div class="form-group row">
+                                    <div class="col-sm-7 col-sm-offset-5">
+                                        <button type="submit" id="btnSubmit" class="btn btn-primary">Submit</button>&nbsp;&nbsp;
+                                        <a class="btn btn-white" href="@Url.Action("AddPurchase", "Purchase")">Cancel</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                }
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Styles {
+    @Styles.Render("~/plugins/clockpickerStyles")
+    @Styles.Render("~/plugins/dateRangeStyles")
+    @Styles.Render("~/plugins/awesomeCheckboxStyles")
+    @Styles.Render("~/Content/plugins/iCheck/iCheckStyles")
+    @Styles.Render("~/Content/plugins/chosen/chosenStyles")
+    @Styles.Render("~/plugins/dataPickerStyles")
+    @Styles.Render("~/plugins/select2Styles")
+    @Styles.Render("~/plugins/sweetAlertStyles")
+    @Styles.Render("~/plugins/select2Styles")
+}
+@section Scripts{
+    @Scripts.Render("~/plugins/iCheck")
+    @Scripts.Render("~/plugins/dataPicker")
+    @Scripts.Render("~/plugins/chosen")
+    @Scripts.Render("~/plugins/clockpicker")
+    @Scripts.Render("~/plugins/dateRange")
+    @Scripts.Render("~/plugins/select2")
+    @Scripts.Render("~/plugins/validate")
+    @Scripts.Render("~/plugins/sweetAlert")
+    @Scripts.Render("~/plugins/select2")
+
+    <script type="text/javascript">
+        $(document).ready(function () {
+
+            $("#Itemerror").hide();
+
+            if ('@TempData["SuccessMessage"]' != '') {
+                sweetAlert("Sucesss!!", '@TempData["SuccessMessage"]', "success");
+            }
+            if ('@TempData["ErrorMessage"]' != '') {
+                sweetAlert("Error!!", '@TempData["ErrorMessage"]', "error");
+            }
+
+            @*$("#Name").blur(function () {
+                debugger;
+                if ($("#ID").val() == "0") {
+                    var ItemName = $("#Name").val();
+                    $.ajax({
+                        url: '@Url.Action("CheckItemIsExist", "Item")',
+                        type: "GET",
+                        dataType: "JSON",
+                        data: { ItemName: ItemName },
+                        success: function (data) {
+                            if (data != '') {
+                                $("#Purchaseerror").show();
+                            } else {
+                                $("#Purchaseerror").hide();
+                            }
+                        }
+                    });
+                }
+            });*@
+
+            $("#frmAddUpdate").validate({
+                rules: {
+                    Weight:{
+                       required:true
+                    },
+                    Price: {
+                        required: true
+                    }
+
+                },
+                messages: {
+                    Weight: {
+                        required: "Please enter weight",
+                    },
+
+                    Price: {
+                        required: "Please enter price",
+                    }
+                }
+            });
+
+        });
+
+        function fnDelete(PurchaseID) {
+            swal({
+                title: "Are you sure?",
+                text: "You want to delete this purchase?",
+                type: "warning",
+                showCancelButton: true,
+                confirmButtonColor: "#DD6B55",
+                closeOnConfirm: false
+            }, function (e) {
+                if (e) {
+                    $.ajax(
+                        {
+                            type: "GET",
+                            url: '@Url.Action("DeletePurchase", "Purchase")',
+                            contentType: 'application/json; charset=utf-8',
+                            data: { PurchaseID: PurchaseID },
+                            dataType: "JSON",
+                            success: function (data) {
+                                swal(data);
+                                window.setTimeout(function () {
+                                    location.reload();
+                                }, 1000);
+                            },
+                            error: function (event, xhr, options, exc) {
+                                sweetAlert("Error!!", data, "error");
+                            }
+                        });
+                }
+            });
+        }
+    </script>
+}
+
+
+
+
+
+
+
+

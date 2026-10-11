@@ -1,0 +1,104 @@
+﻿<style>
+    .img-circle {
+        border-radius: 0%;
+    }
+
+    .small-chat {
+        display: none;
+    }
+</style>
+
+<nav class="navbar-default navbar-static-side" role="navigation">
+    <div class="sidebar-collapse">
+        <ul class="nav" id="side-menu">
+            <li class="nav-header">
+                <div class="dropdown profile-element">
+                    <span>
+                        <img alt="image" class="img-circle" style="height:80px; border-radius: 0%;margin-left: -7px;" src="~/Content/ff.png" />
+                    </span>
+                    <a data-toggle="dropdown" class="dropdown-toggle" href="#">
+                        <span class="clear">
+                            <span class="block m-t-xs">
+                                <strong class="font-bold text-center">Welcome, Admin</strong>
+                            </span> <span class="text-muted text-xs block"></span>
+                        </span>
+                    </a>
+                </div>
+                <div class="logo-element">
+                    FF
+                </div>
+            </li>
+
+
+            <li class="@Html.IsSelected(controller: "Home")">
+                <a href="@Url.Action("Index", "Home")"><i class="fa fa-tachometer"></i> <span class="nav-label" data-i18n="nav.layouts">Dashboard</span></a>
+            </li>
+
+            <li class="@Html.IsSelected(controller: "Category")">
+                <a href="@Url.Action("CategoryList", "Category")"><i class="fa fa-cube"></i> <span class="nav-label" data-i18n="nav.layouts">Category</span></a>
+            </li>
+
+            <li class="@Html.IsSelected(controller: "Item")">
+                <a href="@Url.Action("ItemList", "Item")"><i class="fa fa-cubes"></i> <span class="nav-label" data-i18n="nav.layouts">Item Master</span></a>
+            </li>
+
+            <li class="@Html.IsSelected(controller: "Purchase")">
+                <a href="@Url.Action("PurchaseList", "Purchase")"><i class="fa fa-database"></i> <span class="nav-label" data-i18n="nav.layouts">Manage Purchase</span></a>
+            </li>
+
+            <li class="@Html.IsSelected(controller: "Store")">
+                <a href="@Url.Action("StockList", "Store")"><i class="fa fa-th-large"></i> <span class="nav-label" data-i18n="nav.layouts">Store</span></a>
+            </li>
+
+            <li class="@Html.IsSelected(controller: "ManageOrder")">
+                <a href="@Url.Action("OrderList", "ManageOrder")"><i class="fa fa-shopping-cart"></i> <span class="nav-label" data-i18n="nav.layouts">Manage Order</span></a>
+            </li>
+
+            <li class="@Html.IsSelected(controller: "Report")">
+                <a href="#"><i class="fa fa-line-chart"></i> <span class="nav-label" data-i18n="nav.dashboard">Reports</span><span class="fa arrow"></span></a>
+                <ul class="nav nav-second-level collapse @Html.IsSelected(controller: "Report", cssClass: "in")">
+                    <li class="@Html.IsSelected(action: "PurchaseSummary")"><a href="@Url.Action("PurchaseSummary", "Report")">Purchase Summary</a></li>
+                    <li class="@Html.IsSelected(action: "OrderSummary")"><a href="@Url.Action("OrderSummary", "Report")">Order Payment</a></li>
+                    <li class="@Html.IsSelected(action: "PinCodeList")"><a href="@Url.Action("PinCodeList", "Report")">Pin Code</a></li>
+                </ul>
+            </li>
+
+            <li class="@Html.IsSelected(controller: "Wallet")">
+                <a href="#"><i class="fa fa-money"></i> <span class="nav-label" data-i18n="nav.dashboard">Wallet</span><span class="fa arrow"></span></a>
+                <ul class="nav nav-second-level collapse @Html.IsSelected(controller: "Wallet", cssClass: "in")">
+                    <li class="@Html.IsSelected(action: "AddMoney")"><a href="@Url.Action("AddMoney", "Wallet")">Add Money</a></li>
+                    <li class="@Html.IsSelected(action: "WalletDetail")">
+                        <a href="@Url.Action("WalletDetail", "Wallet")">Wallet Detail</a>
+                    </li>
+                    <li class="@Html.IsSelected(action: "TransactionHistory")"><a href="@Url.Action("TransactionHistory", "Wallet")">Transaction History</a></li>
+                </ul>
+            </li>
+
+
+            <li class="@Html.IsSelected(controller: "Offer")">
+                <a href="#"><i class="fa fa-gift"></i> <span class="nav-label" data-i18n="nav.dashboard">Offers</span><span class="fa arrow"></span></a>
+                <ul class="nav nav-second-level collapse @Html.IsSelected(controller: "Offer", cssClass: "in")">
+                    <li class="@Html.IsSelected(action: "OfferMaster")"><a href="@Url.Action("OfferMaster", "Offer")">Offer Master</a></li>
+                    <li class="@Html.IsSelected(action: "AddOffer")"><a href="@Url.Action("AddOffer", "Offer")">Add Offer</a></li>
+                </ul>
+            </li>
+
+            <li class="@Html.IsSelected(controller: "ManageUnit")">
+                <a href="@Url.Action("UnitList", "ManageUnit")"><i class="fa fa-bars"></i> <span class="nav-label" data-i18n="nav.layouts">Unit Master</span></a>
+            </li>
+
+            <li class="@Html.IsSelected(controller: "Balance")">
+                <a href="@Url.Action("GetBalanceList", "Balance")"><i class="fa fa-money"></i> <span class="nav-label" data-i18n="nav.layouts">Balance</span></a>
+            </li>
+
+            <li class="@Html.IsSelected(controller: "Account")">
+                <a href="@Url.Action("UserList", "Account")"><i class="fa fa-users"></i> <span class="nav-label" data-i18n="nav.layouts">Manage User</span></a>
+            </li>
+            <li class="@Html.IsSelected(controller: "Notification")">
+                <a href="@Url.Action("NotificationList", "Notification")">  <i class="fa fa-bell" style="font-size:14px"></i> <span class="nav-label" data-i18n="nav.layouts">Notification</span></a>
+            </li>
+
+
+        </ul>
+    </div>
+</nav>

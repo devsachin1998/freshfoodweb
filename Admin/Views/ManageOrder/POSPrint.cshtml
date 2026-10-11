@@ -1,0 +1,139 @@
+﻿@model Order_Model
+@{
+    Layout = null;
+}
+
+<style>
+    * {
+        font-size: 12px;
+        font-family: 'Times New Roman';
+    }
+
+    td,
+    th,
+    tr,
+    table {
+        border-top: 1px solid black;
+        border-collapse: collapse;
+    }
+
+        td.description,
+        th.description {
+            width: 150px;
+            max-width: 150px;
+        }
+
+        td.quantity,
+        th.quantity {
+            width: 80px;
+            max-width: 80px;
+            /*word-break: break-all;*/
+        }
+
+        td.price,
+        th.price {
+            width: 80px;
+            max-width: 80px;
+            /*word-break: break-all;*/
+        }
+
+    .centered {
+        text-align: center;
+        align-content: center;
+    }
+
+    .ticket {
+        width: 155px;
+        max-width: 155px;
+    }
+
+    img {
+        max-width: inherit;
+        width: inherit;
+    }
+
+    @@media print {
+        .hidden-print,
+        .hidden-print * {
+            display: none !important;
+        }
+    }
+</style>
+<body>
+    <div class="ticket">
+        <img src="http://admin.freshfoodz.in.net/Content/ff.png" alt="Logo">
+        <p class="centered">
+            <b>Order No :</b> <b>@Model.OrderNo</b>
+            <br><b>Date :</b> @Model.OrderDate
+            <br><b>Order Status :</b> @Model.OrderStatus
+        </p>
+        <p>
+            <b>Customer Name :</b> @Model.CustomerName
+            <br /><b>Mobile No :</b> @Model.CustomerMobile
+            @if (Model.CustomerAddress == Model.DeliveryAddress)
+            {
+                <br /><b>Address :</b> @Model.DeliveryAddress
+            }
+            else
+            {                
+                <br /><b>Address :</b> @Model.DeliveryAddress
+                if (!string.IsNullOrEmpty(@Model.CustomerAddress))
+                { <span>/</span> @Model.CustomerAddress}
+            }
+            <br /><b>Customer Remark :</b> @Model.CustomerRemark
+        </p>
+        <table>
+            <thead>
+                <tr>
+                    <th class="description">Item</th>
+                    <th class="price">Delivery Weight</th>
+                    <th class="price">Actual Price</th>
+                    <th class="price">Price</th>
+                </tr>
+            </thead>
+            <tbody>
+                @if (Model != null)
+                {
+                    if (Model._itemList.Count != 0)
+                    {
+                        for (int i = 0; i < Model._itemList.Count; i++)
+                        {
+                            <tr>
+                                <td class="description">@Model._itemList[i].ItemName</td>
+                                <td class="price">@Model._itemList[i].DeliveryWeight</td>
+                                <td class="price">@Model._itemList[i].Price</td>
+                                <td class="price">@Model._itemList[i].DeliveryPrice</td>
+                            </tr>
+                        }
+                    }
+                }
+                <tr>
+                    <td class="quantity"></td>
+                    <td class="quantity"></td>
+                    <td class="price">@Model.Total</td>
+                    <td class="description"></td>
+                </tr>
+                <tr>
+                    <td class="quantity"></td>
+                    <td class="quantity"></td>
+                    <td class="description"><b>Payable Amount</b></td>
+                    <td class="price"><b>@Model.BillingAmount</b></td>
+                </tr>
+            </tbody>
+        </table>
+        <p style="text-align:center;">
+            <strong> Thanks for using FreshFoodz!!!</strong>
+        </p>
+    </div>
+    @*<button class="btn btn-primary hidden-print" id="printBtn" onclick="window.print();">
+            Print
+        </button>*@
+</body>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+<script type="text/javascript">
+    debugger;
+    //$("#Print").click();
+    window.print();
+
+
+</script>

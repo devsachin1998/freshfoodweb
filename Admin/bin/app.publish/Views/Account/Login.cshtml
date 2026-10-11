@@ -1,0 +1,101 @@
+﻿@{
+    ViewBag.Title = "Login";
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Login | FreshFoodz</title>
+
+    <link href="~/Content/bootstrap.min.css" rel="stylesheet">
+    <link href="~/Fonts/font-awesome/css/font-awesome.css" rel="stylesheet">
+    @*<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>*@
+    <link href="~/Content/animate.css" rel="stylesheet">
+    <link href="~/Content/style.css" rel="stylesheet">
+</head>
+
+<body class="gray-bg" onload="noBack();" onpageshow="if (event.persisted) noBack();">
+    <div class="loginColumns animated fadeInDown" style="margin-top: -125px;">
+        <div class="row" style="text-align:center;">
+            <h1 class="logo-name">
+                <img src="~/Content/ff.png" style="margin-bottom: 10px;width: 45%;" />
+            </h1>
+        </div>
+        <div class="row">
+            <div class="col-md-3">
+            </div>
+            <div class="col-md-6">
+                <div class="ibox-content">
+                    <h3 class="text-center" style="color: #676464; font-weight:bolder;">ADMIN PANEL</h3>
+                    @using (Html.BeginForm("Login", "Account", FormMethod.Post, new { @id = "frmAddUpdateUser", @enctype = "multipart/form-data" }))
+                    {
+                        <div class="form-group">
+                            <input type="text" id="UserName" name="UserName" class="form-control" placeholder="UserName" required="">
+                        </div>
+                        <div class="form-group">
+                            <input type="password" id="Password" name="Password" class="form-control" placeholder="Password" required="">
+                        </div>
+                        <button type="submit" class="btn btn-primary block full-width m-b">Login</button>
+                        <p class="m-t" style="color: red;" id="errorTag"><b> You have entered wrong username and password!!</b></p>
+                        @*<a href="#">
+                                <small>Forgot password?</small>
+                            </a>*@
+
+                        <p class="text-muted text-center">
+                            @*<small>Do not have an account?</small>*@
+                        </p>
+                        @*<a class="btn btn-sm btn-white btn-block" href="#">Create an account</a>*@
+                    }
+                    <p class="m-t">
+                        @* <small>Inspinia we app framework base on Bootstrap 3 &copy; 2014</small>*@
+                    </p>
+                </div>
+            </div>
+            <div class="col-md-3">
+            </div>
+        </div>
+        <hr />
+        <div class="row">
+            <div class="col-md-6 text-right">  © All right reserved 2021.  <b style="color:#619606;">FreshFoodz</b></div>
+            <div class="col-md-6 text-left"> Designed & Developed by <b style="color:#619606;"> Vegetable & Fruit Online Delivery </b></div>
+            @*<div class="col-md-3">
+            </div>
+            <div class="col-md-4">
+                Copyright
+            </div>
+            <div class="col-md-2 text-right">
+                <small>© 2021</small>
+            </div>
+            <div class="col-md-3">
+                FreshFoodz
+            </div>*@
+        </div>
+    </div>
+
+
+    <link href="~/Content/plugins/sweetalert/sweetalert.css" rel="stylesheet" />
+    <script src="~/Scripts/plugins/sweetalert/sweetalert.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            window.history.forward();
+            $("#errorTag").css("display", "none");
+            if ('@TempData["SuccessMessage"]' != '') {
+                sweetAlert("Sucesss!!", '@TempData["SuccessMessage"]', "success");
+            }
+            if ('@TempData["ErrorMessage"]' != '') {
+                $("#errorTag").css("display", "block");
+                sweetAlert("Error!!", '@TempData["ErrorMessage"]', "error");
+            }
+
+        });
+        function noBack() { window.history.forward(); }
+    </script>
+</body>
+
+</html>

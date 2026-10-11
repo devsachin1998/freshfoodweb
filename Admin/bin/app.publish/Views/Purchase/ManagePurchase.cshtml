@@ -1,0 +1,209 @@
+﻿@model Purchase
+@{
+    ViewBag.Title = "Manage Purchase";
+}
+
+<div class="row wrapper border-bottom white-bg page-heading">
+    <div class="col-lg-10">
+        <h2>Purchase Management</h2>
+        <ol class="breadcrumb">
+            <li>
+                <a href="@Url.Action("Index", "Home")">Dashboard</a>
+            </li>
+            <li>
+                <a href="@Url.Action("PurchaseList", "Purchase")">Purchase List</a>
+            </li>
+            <li class="active">
+                <strong>Manage Purchase</strong>
+            </li>
+        </ol>
+    </div>
+</div>
+<div class="wrapper wrapper-content animated fadeInRight">
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="ibox float-e-margins">
+                @using (Html.BeginForm("SavePurchase", "Purchase", FormMethod.Post, new { @id = "frmAddUpdate", @enctype = "multipart/form-data" }))
+                {
+                    @Html.HiddenFor(m => m.PurchaseID)
+                    <div class="col-lg-12">
+                        <div class="ibox ">
+                            <div class="ibox-content">
+
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <ul class="sortable-list connectList agile-list">
+                                            <li class="success-element">
+                                                @Html.Label("Item Details")
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <div class="col-sm-6">
+                                        @if (Model.PurchaseID == 0)
+                                        {
+                                            @Html.Label("Item") <b style="color:red">*</b>
+                                            @Html.DropDownListFor(m => m.ItemID, CommonHelper.GetPurchaseItem(), new { @class = "select2_demo_1 form-control" })
+                                        }
+                                        else
+                                        {
+                                            @Html.HiddenFor(m => m.ItemID)
+                                            @Html.Label("Item") <b style="color:red">*</b>
+                                            @Html.TextBoxFor(m => m.ItemName, new { @class = "form-control", @readonly=true })
+                                        }
+                                    </div>
+                                    <div class="col-sm-3">
+                                        @Html.Label("UOM")
+                                        @Html.DropDownListFor(m => m.UOMID, CommonHelper.GetUnit(), new { @class = "form-control" })
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <ul class="sortable-list connectList agile-list">
+                                            <li class="success-element">
+                                                @Html.Label("Purchase Details")
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <div class="col-sm-2">
+                                        @Html.Label("Purchase Qty") <b style="color:red">*</b>
+                                        @Html.TextBoxFor(m => m.Weight, new { @class = "form-control", @Placeholder = "Purchase Qty" })
+                                    </div>
+                                    <div class="col-sm-2">
+                                        @Html.Label("Purchase Price") <b style="color:red">*</b>
+                                        @Html.TextBoxFor(m => m.Price, new { @class = "form-control", @Placeholder = "Purchase Price" })
+                                    </div>
+                                    <div class="col-sm-3" id="data_1">
+                                        @Html.Label("Purchase Date")
+                                        <div class="input-group date">
+                                            <span class="input-group-addon"><i class="fa fa-calendar"></i></span>
+                                            @Html.TextBoxFor(m => m.EntryDate, new { @placeholder = "dd/MM/yyyy", @class = "form-control", @autocomplete = "off" })
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <hr />
+                                <div class="form-group row">
+                                    <div class="col-sm-7 col-sm-offset-5">
+                                        <button type="submit" id="btnSubmit" class="btn btn-primary" onkeypress="return event.keyCode != 13;"><i class="fa fa-save"></i>&nbsp; Submit</button>&nbsp;&nbsp;
+                                        <a class="btn btn-white" href="@Url.Action("PurchaseList", "Purchase")" id="btnSubmit"><i class="fa fa-times"></i>&nbsp;Cancel</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                }
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Styles {
+    @Styles.Render("~/plugins/clockpickerStyles")
+    @Styles.Render("~/plugins/dateRangeStyles")
+    @Styles.Render("~/plugins/awesomeCheckboxStyles")
+    @Styles.Render("~/Content/plugins/iCheck/iCheckStyles")
+    @Styles.Render("~/Content/plugins/chosen/chosenStyles")
+    @Styles.Render("~/plugins/dataPickerStyles")
+    @Styles.Render("~/plugins/select2Styles")
+    @Styles.Render("~/plugins/sweetAlertStyles")
+    @Styles.Render("~/plugins/select2Styles")
+}
+@section Scripts{
+    @Scripts.Render("~/plugins/iCheck")
+    @Scripts.Render("~/plugins/dataPicker")
+    @Scripts.Render("~/plugins/chosen")
+    @Scripts.Render("~/plugins/clockpicker")
+    @Scripts.Render("~/plugins/dateRange")
+    @Scripts.Render("~/plugins/select2")
+    @Scripts.Render("~/plugins/validate")
+    @Scripts.Render("~/plugins/sweetAlert")
+    @Scripts.Render("~/plugins/select2")
+
+    <script type="text/javascript">
+        $(document).ready(function () {
+
+            $(".select2_demo_1").select2();
+
+            if ('@TempData["SuccessMessage"]' != '') {
+                sweetAlert("Sucesss!!", '@TempData["SuccessMessage"]', "success");
+            }
+            if ('@TempData["ErrorMessage"]' != '') {
+                sweetAlert("Error!!", '@TempData["ErrorMessage"]', "error");
+            }
+
+            $('#data_1 .input-group.date').datepicker({
+                todayBtn: "linked",
+                keyboardNavigation: false,
+                forceParse: false,
+                calendarWeeks: true,
+                autoclose: true,
+                format: "dd/mm/yyyy"
+            });
+
+            if ($("#Weight").val() == 0) {
+                $("#Weight").val("");
+            }
+            if ($("#Price").val() == 0) {
+                $("#Price").val("");
+            }
+
+            $("#ItemID").change(function () {
+                var ItemID = $("#ItemID").val();
+                $.ajax({
+                    url: '@Url.Action("GetItemUOMName", "Purchase")',
+                    type: "GET",
+                    dataType: "JSON",
+                    data: { ItemID: ItemID },
+                    success: function (data) {
+                        $("#UOMName").val(data);
+                    }
+                });
+            });
+
+            if ($("#ItemID").val() > 0) {
+                var ItemID = $("#ItemID").val();
+                $.ajax({
+                    url: '@Url.Action("GetItemUOMName", "Purchase")',
+                    type: "GET",
+                    dataType: "JSON",
+                    data: { ItemID: ItemID },
+                    success: function (data) {
+                        $("#UOMName").val(data);
+                    }
+                });
+            }
+
+            $("#frmAddUpdate").validate({
+                rules: {
+                    ItemID: {
+                        required: true,
+                    },
+                    Weight: {
+                        required: true
+                    },
+                    Price: {
+                        required: true
+                    }
+                },
+                messages: {
+                    ItemID: {
+                        required: "Please select item",
+                    },
+                    Weight: {
+                        required: "Please enter weight",
+                    },
+                    Price: {
+                        required: "Please enter price",
+                    }
+                }
+            });
+
+        });
+
+
+    </script>
+}

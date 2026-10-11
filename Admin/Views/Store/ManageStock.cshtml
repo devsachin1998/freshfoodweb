@@ -1,0 +1,694 @@
+﻿@model Admin.Models.Stock_Model
+
+@{
+    ViewBag.Title = "Manage Stock";
+
+    int editMainID = Model != null ? Model.MainID : 0;
+    int editItemID = Model != null ? Model.ItemID : 0;
+
+    bool hasRows = Model != null &&
+                   Model._subitemList != null &&
+                   Model._subitemList.Count > 0;
+}
+
+<style>
+    .stock-page {
+        padding-bottom: 30px;
+    }
+
+    .stock-card {
+        background: #fff;
+        border: 1px solid #e7eaec;
+        border-radius: 4px;
+        box-shadow: 0 1px 3px rgba(0,0,0,.04);
+    }
+
+    .stock-card-header {
+        padding: 18px 20px;
+        border-bottom: 1px solid #e7eaec;
+    }
+
+        .stock-card-header h3 {
+            margin: 0;
+            font-size: 17px;
+            font-weight: 600;
+            color: #333;
+        }
+
+    .stock-card-body {
+        padding: 25px 20px;
+    }
+
+    .item-section {
+        max-width: 650px;
+    }
+
+    .item-label {
+        font-weight: 600;
+        color: #555;
+        margin-bottom: 8px;
+        display: block;
+    }
+
+    .stock-table-wrapper {
+        margin-top: 25px;
+        border: 1px solid #e7eaec;
+        border-radius: 4px;
+        overflow-x: auto;
+    }
+
+    .stock-table {
+        width: 100%;
+        min-width: 800px;
+        margin: 0;
+        border-collapse: collapse;
+    }
+
+        .stock-table thead th {
+            background: #f8f9fa;
+            border-bottom: 1px solid #e7eaec;
+            padding: 13px 12px;
+            font-size: 13px;
+            font-weight: 600;
+            color: #555;
+            white-space: nowrap;
+        }
+
+        .stock-table tbody td {
+            padding: 12px;
+            border-bottom: 1px solid #f0f0f0;
+            vertical-align: middle;
+        }
+
+        .stock-table tbody tr:last-child td {
+            border-bottom: 0;
+        }
+
+    .stock-item-name {
+        font-weight: 500;
+        color: #333;
+    }
+
+    .stock-input {
+        height: 36px;
+        border-radius: 3px;
+    }
+
+        .stock-input.input-error {
+            border-color: #ed5565;
+        }
+
+    .uom-box {
+        color: #777;
+        background: #f8f9fa;
+    }
+
+    .stock-checkbox-wrapper {
+        text-align: center;
+    }
+
+    .stock-actions {
+        margin-top: 25px;
+        padding-top: 20px;
+        border-top: 1px solid #e7eaec;
+    }
+
+    .loading-stock,
+    .empty-stock {
+        text-align: center;
+        padding: 35px 15px;
+        color: #999;
+    }
+
+        .loading-stock i {
+            margin-right: 5px;
+        }
+
+    .select2-container .select2-selection--single {
+        height: 38px !important;
+        border: 1px solid #e5e6e7 !important;
+        border-radius: 3px !important;
+    }
+
+    .select2-container--default
+    .select2-selection--single
+    .select2-selection__rendered {
+        line-height: 36px !important;
+        padding-left: 12px !important;
+    }
+
+    .select2-container--default
+    .select2-selection--single
+    .select2-selection__arrow {
+        height: 36px !important;
+    }
+
+    .page-heading {
+        margin-bottom: 20px;
+    }
+
+    @@media (max-width: 767px) {
+        .stock-card-body {
+            padding: 15px;
+        }
+
+        .item-section {
+            max-width: 100%;
+        }
+
+        .stock-actions {
+            text-align: center;
+        }
+
+            .stock-actions .btn {
+                margin: 3px;
+            }
+    }
+</style>
+
+<div class="row wrapper border-bottom white-bg page-heading">
+    <div class="col-lg-10">
+        <h2>Manage Stock</h2>
+        <ol class="breadcrumb">
+            <li>
+                <a href="@Url.Action("StockList", "Store")">Stock</a>
+            </li>
+            <li class="active">
+                <strong>Manage Stock</strong>
+            </li>
+        </ol>
+    </div>
+</div>
+
+<div class="wrapper wrapper-content stock-page">
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="stock-card">
+
+                <div class="stock-card-header">
+                    <h3>Stock Details</h3>
+                </div>
+
+                <div class="stock-card-body">
+
+                    @using (Html.BeginForm("SaveStock", "Store", FormMethod.Post, new { id = "frmStock" }))
+                    {
+                        @Html.AntiForgeryToken()
+
+                        @Html.HiddenFor(m => m.MainID, new { id = "MainID" })
+
+                        <input type="hidden" id="SubItemCount" name="SubItemCount"
+                               value="@(hasRows ? Model._subitemList.Count : 0)" />
+
+                        <!-- ITEM -->
+                        <div class="item-section">
+                            <label class="item-label" for="ItemID">Select Item</label>
+
+                            @* Saare items page load pe NAHI aate.
+                                User type kare tab AJAX se aate hain.
+                                Edit mode mein sirf selected item pehle se rehta hai. *@
+                            <select id="ItemID" name="ItemID" class="form-control" style="width:100%;">
+                                <option value=""></option>
+                                @if (editItemID > 0)
+                                {
+                                    <option value="@editItemID" selected>@Model.ItemName</option>
+                                }
+                            </select>
+                        </div>
+
+                        <!-- SUB ITEMS -->
+                        <div id="stockContent">
+
+                            @if (hasRows)
+                            {
+                                <div class="stock-table-wrapper">
+                                    <table class="stock-table">
+                                        <thead>
+                                            <tr>
+                                                <th style="width:30%;">Item</th>
+                                                <th style="width:15%;">UOM</th>
+                                                <th style="width:18%;">Weight</th>
+                                                <th style="width:18%;">Price</th>
+                                                <th style="width:15%; text-align:center;">In Stock</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            @for (int i = 0; i < Model._subitemList.Count; i++)
+                                            {
+                                                var item = Model._subitemList[i];
+
+                                                <tr class="subitem-row">
+                                                    <td>
+                                                        <input type="hidden" name="_subitemList[@i].StockID" value="@item.StockID" />
+                                                        <input type="hidden" name="_subitemList[@i].MainID" value="@item.MainID" />
+                                                        <input type="hidden" name="_subitemList[@i].ItemID" value="@item.ItemID" />
+                                                        <input type="hidden" name="_subitemList[@i].SubItemID" value="@item.SubItemID" />
+                                                        <input type="hidden" name="_subitemList[@i].UOMID" value="@item.UOMID" />
+
+                                                        <span class="stock-item-name">@item.ItemName</span>
+                                                    </td>
+
+                                                    <td>
+                                                        <input type="text" class="form-control stock-input uom-box"
+                                                               value="@item.UOMName" readonly />
+                                                    </td>
+
+                                                    <td>
+                                                        @* Weight Item Master se aata hai, yahan badal nahi sakte *@
+                                                        <input type="text" class="form-control stock-input uom-box weight-input"
+                                                               name="_subitemList[@i].Weight"
+                                                               value="@item.Weight"
+                                                               readonly />
+                                                    </td>
+
+                                                    <td>
+                                                        <input type="text" class="form-control stock-input price-input"
+                                                               name="_subitemList[@i].Price"
+                                                               value="@(item.StockID > 0 ? item.Price.ToString(System.Globalization.CultureInfo.InvariantCulture) : "")"
+                                                               inputmode="decimal"
+                                                               placeholder="Enter price" />
+                                                    </td>
+
+                                                    <td class="stock-checkbox-wrapper">
+                                                        @* Checkbox PEHLE, hidden "false" BAAD mein. *@
+                                                        <input type="checkbox" class="i-checks"
+                                                               name="_subitemList[@i].InStock"
+                                                               value="true"
+                                                               @(item.InStock ? "checked" : "") />
+                                                        <input type="hidden" name="_subitemList[@i].InStock" value="false" />
+                                                    </td>
+                                                </tr>
+                                            }
+                                        </tbody>
+                                    </table>
+                                </div>
+                            }
+                            else
+                            {
+                                <div class="empty-stock">Select an item to view stock details.</div>
+                            }
+
+                        </div>
+
+                        <!-- ACTIONS -->
+                        <div class="stock-actions">
+                            <button type="button" id="btnSaveStock" class="btn btn-primary">
+                                <i class="fa fa-save"></i> Save Stock
+                            </button>
+
+                            <a href="@Url.Action("StockList", "Store")" class="btn btn-white">
+                                <i class="fa fa-times"></i> Cancel
+                            </a>
+                        </div>
+                    }
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Styles {
+    <link href="~/Content/plugins/select2/select2.min.css" rel="stylesheet" />
+    <link href="~/Content/plugins/iCheck/custom.css" rel="stylesheet" />
+    <link href="~/Content/plugins/sweetalert/sweetalert.css" rel="stylesheet" />
+}
+
+@section Scripts {
+    <script src="~/Scripts/plugins/select2/select2.full.min.js"></script>
+    <script src="~/Scripts/plugins/iCheck/icheck.min.js"></script>
+    <script src="~/Scripts/plugins/sweetalert/sweetalert.min.js"></script>
+
+    <script>
+        var editMainID = @editMainID;
+        var editItemID = @editItemID;
+
+        var urls = {
+            items: '@Url.Action("GetItemsForSelect", "Store")',
+            stockForItem: '@Url.Action("GetStockForItem", "Store")',
+            save: '@Url.Action("SaveStock", "Store")',
+            list: '@Url.Action("StockList", "Store")'
+        };
+
+        var EMPTY_HTML =
+            '<div class="empty-stock">Select an item to view stock details.</div>';
+
+        var LOADING_HTML =
+            '<div class="loading-stock">' +
+            '<i class="fa fa-spinner fa-spin"></i> Loading stock...' +
+            '</div>';
+
+        var TABLE_HEAD =
+            '<thead><tr>' +
+            '<th style="width:30%;">Item</th>' +
+            '<th style="width:15%;">UOM</th>' +
+            '<th style="width:18%;">Weight</th>' +
+            '<th style="width:18%;">Price</th>' +
+            '<th style="width:15%; text-align:center;">In Stock</th>' +
+            '</tr></thead>';
+
+        var pendingRequest = null;
+
+        $(function () {
+
+            // =====================================
+            // ITEM SELECT2 (AJAX)
+            // =====================================
+            $("#ItemID").select2({
+                width: "100%",
+                placeholder: "-- Select Item --",
+                allowClear: true,
+                minimumInputLength: 0,
+                ajax: {
+                    url: urls.items,
+                    type: "GET",
+                    dataType: "json",
+                    delay: 250,
+                    cache: true,
+                    data: function (params) {
+                        return { term: params.term || "" };
+                    },
+                    processResults: function (data) {
+                        return { results: (data && data.results) ? data.results : [] };
+                    }
+                }
+            });
+
+            initializeICheck($("#stockContent"));
+
+            // =====================================
+            // EDIT MODE - koi AJAX call nahi
+            // =====================================
+            if (editMainID > 0 && editItemID > 0) {
+                $("#MainID").val(editMainID);
+            }
+
+            // =====================================
+            // ITEM CHANGE
+            // =====================================
+            $("#ItemID").on("change", function () {
+                var itemID = $(this).val();
+
+                $("#MainID").val("0");
+
+                if (!itemID || itemID == "0") {
+                    abortPending();
+                    $("#stockContent").html(EMPTY_HTML);
+                    $("#SubItemCount").val("0");
+                    return;
+                }
+
+                loadStockForItem(itemID);
+            });
+
+            // Error highlight hatao jab user type kare
+            $("#stockContent").on("input change", ".stock-input", function () {
+                $(this).removeClass("input-error");
+            });
+
+            // =====================================
+            // SAVE
+            // =====================================
+            $("#btnSaveStock").on("click", saveStock);
+        });
+
+
+        function initializeICheck($container) {
+            $container.find(".i-checks").iCheck({
+                checkboxClass: "icheckbox_square-green",
+                radioClass: "iradio_square-green"
+            });
+        }
+
+
+        function abortPending() {
+            if (pendingRequest) {
+                pendingRequest.abort();
+                pendingRequest = null;
+            }
+        }
+
+
+        // =====================================
+        // LOAD STOCK FOR ITEM (1 request)
+        // =====================================
+        function loadStockForItem(itemID) {
+
+            abortPending();
+
+            $("#stockContent").html(LOADING_HTML);
+            $("#SubItemCount").val("0");
+
+            // Data aane tak Save band (adhoora data save na ho)
+            $("#btnSaveStock").prop("disabled", true);
+
+            pendingRequest = $.ajax({
+                url: urls.stockForItem,
+                type: "GET",
+                dataType: "json",
+                cache: false,
+                data: { ItemID: itemID },
+
+                success: function (response) {
+
+                    if (String($("#ItemID").val()) !== String(itemID)) {
+                        return;
+                    }
+
+                    if (response && response.success) {
+                        $("#MainID").val(parseInt(response.MainID, 10) || 0);
+                        renderSubItems(response.data);
+                    } else {
+                        $("#stockContent").html(
+                            '<div class="empty-stock">No stock details found.</div>');
+                    }
+                },
+
+                error: function (xhr, status) {
+                    if (status === "abort") return;
+
+                    $("#stockContent").html(
+                        '<div class="alert alert-danger">Unable to load stock details.</div>');
+                },
+
+                complete: function (xhr) {
+                    if (pendingRequest === xhr) {
+                        pendingRequest = null;
+                        $("#btnSaveStock").prop("disabled", false);
+                    }
+                }
+            });
+        }
+
+
+        // =====================================
+        // RENDER SUB ITEMS
+        // =====================================
+        function renderSubItems(data) {
+
+            if (!data || data.length === 0) {
+                $("#stockContent").html(
+                    '<div class="empty-stock">No sub items found for selected item.</div>');
+                $("#SubItemCount").val("0");
+                return;
+            }
+
+            var rows = [];
+
+            for (var i = 0; i < data.length; i++) {
+                rows.push(buildRow(i, data[i]));
+            }
+
+            var $content = $("#stockContent");
+
+            $content.html(
+                '<div class="stock-table-wrapper">' +
+                '<table class="stock-table">' + TABLE_HEAD +
+                '<tbody>' + rows.join("") + '</tbody>' +
+                '</table>' +
+                '</div>');
+
+            $("#SubItemCount").val(data.length);
+
+            initializeICheck($content);
+        }
+
+
+        function buildRow(index, item) {
+
+            var name = "_subitemList[" + index + "].";
+
+            var stockID = item.StockID || 0;
+            var inStock =
+                item.InStock === true || item.InStock === "true" ||
+                item.InStock === 1 || item.InStock === "1";
+
+            var price = (stockID > 0 || item.Price) ? item.Price : "";
+
+            return '' +
+                '<tr class="subitem-row">' +
+
+                '<td>' +
+                hidden(name + "StockID", stockID) +
+                hidden(name + "MainID", item.MainID || 0) +
+                hidden(name + "ItemID", item.ItemID || 0) +
+                hidden(name + "SubItemID", item.SubItemID || 0) +
+                hidden(name + "UOMID", item.UOMID || 0) +
+                '<span class="stock-item-name">' + escapeHtml(item.ItemName) + '</span>' +
+                '</td>' +
+
+                '<td>' +
+                '<input type="text" class="form-control stock-input uom-box" ' +
+                'value="' + escapeHtml(item.UOMName) + '" readonly />' +
+                '</td>' +
+
+                '<td>' +
+                // Weight Item Master se aata hai, yahan badal nahi sakte
+                '<input type="text" class="form-control stock-input uom-box weight-input" ' +
+                'name="' + name + 'Weight" ' +
+                'value="' + escapeHtml(item.Weight) + '" readonly />' +
+                '</td>' +
+
+                '<td>' +
+                '<input type="text" class="form-control stock-input price-input" ' +
+                'name="' + name + 'Price" ' +
+                'value="' + escapeHtml(price) + '" ' +
+                'inputmode="decimal" placeholder="Enter price" />' +
+                '</td>' +
+
+                '<td class="stock-checkbox-wrapper">' +
+                '<input type="checkbox" class="i-checks" ' +
+                'name="' + name + 'InStock" value="true"' +
+                (inStock ? ' checked' : '') + ' />' +
+                hidden(name + "InStock", "false") +
+                '</td>' +
+
+                '</tr>';
+        }
+
+
+        function hidden(name, value) {
+            return '<input type="hidden" name="' + name + '" value="' + escapeHtml(value) + '" />';
+        }
+
+
+        // =====================================
+        // SAVE STOCK
+        // =====================================
+        function saveStock() {
+
+            var itemID = $("#ItemID").val();
+
+            if (!itemID || itemID == "0") {
+                swal("Warning", "Please select item.", "warning");
+                return;
+            }
+
+            var $rows = $("#stockContent tr.subitem-row");
+
+            if ($rows.length === 0) {
+                swal("Warning", "No stock item found.", "warning");
+                return;
+            }
+
+            // Price check: khaali ya valid number hona chahiye.
+            var $invalid = null;
+
+            $rows.find("input.price-input").each(function () {
+                var v = $.trim($(this).val());
+
+                if (v !== "" && !/^\d+(\.\d+)?$/.test(v)) {
+                    $(this).addClass("input-error");
+                    if (!$invalid) $invalid = $(this);
+                }
+            });
+
+            if ($invalid) {
+                swal("Warning", "Please enter a valid price (numbers only).", "warning");
+                $invalid.focus();
+                return;
+            }
+
+            // In Stock tick hai to price zaroori (₹0 mein bikne se bachao).
+            var $noPrice = null;
+
+            $rows.each(function () {
+                var $r = $(this);
+                var $p = $r.find("input.price-input");
+
+                if ($r.find("input.i-checks").is(":checked") && $.trim($p.val()) === "") {
+                    $p.addClass("input-error");
+                    if (!$noPrice) $noPrice = $p;
+                }
+            });
+
+            if ($noPrice) {
+                swal("Warning", "Please enter price for items marked In Stock.", "warning");
+                $noPrice.focus();
+                return;
+            }
+
+            var btn = $("#btnSaveStock");
+            var oldText = btn.html();
+
+            btn.prop("disabled", true)
+               .html('<i class="fa fa-spinner fa-spin"></i> Saving...');
+
+            $.ajax({
+                url: urls.save,
+                type: "POST",
+                data: $("#frmStock").serialize(),
+
+                success: function (response) {
+
+                    if (response && response.success) {
+
+                        if (response.MainID) {
+                            $("#MainID").val(response.MainID);
+                        }
+
+                        if (response.isNew) {
+                            swal({
+                                title: "Success",
+                                text: "Stock saved successfully.",
+                                type: "success"
+                            }, function () {
+                                window.location.href = urls.list;
+                            });
+                        }
+                        else {
+                            swal("Success", "Stock updated successfully.", "success");
+                        }
+
+                    } else {
+                        swal("Error",
+                            (response && response.message) || "Unable to save stock.",
+                            "error");
+                    }
+                },
+
+                error: function () {
+                    swal("Error", "Something went wrong while saving stock.", "error");
+                },
+
+                complete: function () {
+                    btn.prop("disabled", false).html(oldText);
+                }
+            });
+        }
+
+
+        // =====================================
+        // HTML ESCAPE
+        // =====================================
+        var htmlMap = { "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" };
+
+        function escapeHtml(value) {
+            if (value === null || value === undefined) return "";
+
+            return String(value).replace(/[&<>"']/g, function (c) {
+                return htmlMap[c];
+            });
+        }
+    </script>
+}

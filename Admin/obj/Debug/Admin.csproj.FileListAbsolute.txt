@@ -1,0 +1,374 @@
+c:\users\punus\onedrive\documents\visual studio 2015\Projects\Admin\Admin\obj\Debug\Admin.csprojResolveAssemblyReference.cache
+F:\Poonam\Admin\Admin\bin\ApplicationInsights.config
+F:\Poonam\Admin\Admin\bin\roslyn\csc.exe
+F:\Poonam\Admin\Admin\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+F:\Poonam\Admin\Admin\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+F:\Poonam\Admin\Admin\bin\roslyn\Microsoft.CodeAnalysis.dll
+F:\Poonam\Admin\Admin\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+F:\Poonam\Admin\Admin\bin\roslyn\Microsoft.CSharp.Core.targets
+F:\Poonam\Admin\Admin\bin\roslyn\Microsoft.VisualBasic.Core.targets
+F:\Poonam\Admin\Admin\bin\roslyn\System.Collections.Immutable.dll
+F:\Poonam\Admin\Admin\bin\roslyn\System.Reflection.Metadata.dll
+F:\Poonam\Admin\Admin\bin\roslyn\vbc.exe
+F:\Poonam\Admin\Admin\bin\roslyn\VBCSCompiler.exe
+F:\Poonam\Admin\Admin\bin\roslyn\VBCSCompiler.exe.config
+F:\Poonam\Admin\Admin\bin\Admin.dll.config
+F:\Poonam\Admin\Admin\bin\Admin.dll
+F:\Poonam\Admin\Admin\bin\Admin.pdb
+F:\Poonam\Admin\Admin\bin\Antlr3.Runtime.dll
+F:\Poonam\Admin\Admin\bin\EntityFramework.dll
+F:\Poonam\Admin\Admin\bin\EntityFramework.SqlServer.dll
+F:\Poonam\Admin\Admin\bin\Microsoft.AI.Agent.Intercept.dll
+F:\Poonam\Admin\Admin\bin\Microsoft.AI.DependencyCollector.dll
+F:\Poonam\Admin\Admin\bin\Microsoft.AI.PerfCounterCollector.dll
+F:\Poonam\Admin\Admin\bin\Microsoft.AI.ServerTelemetryChannel.dll
+F:\Poonam\Admin\Admin\bin\Microsoft.AI.Web.dll
+F:\Poonam\Admin\Admin\bin\Microsoft.AI.WindowsServer.dll
+F:\Poonam\Admin\Admin\bin\Microsoft.ApplicationInsights.dll
+F:\Poonam\Admin\Admin\bin\Microsoft.AspNet.Identity.Core.dll
+F:\Poonam\Admin\Admin\bin\Microsoft.AspNet.Identity.EntityFramework.dll
+F:\Poonam\Admin\Admin\bin\Microsoft.AspNet.Identity.Owin.dll
+F:\Poonam\Admin\Admin\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+F:\Poonam\Admin\Admin\bin\Microsoft.Web.Infrastructure.dll
+F:\Poonam\Admin\Admin\bin\Newtonsoft.Json.dll
+F:\Poonam\Admin\Admin\bin\System.Web.Helpers.dll
+F:\Poonam\Admin\Admin\bin\System.Web.Mvc.dll
+F:\Poonam\Admin\Admin\bin\System.Web.Optimization.dll
+F:\Poonam\Admin\Admin\bin\System.Web.Razor.dll
+F:\Poonam\Admin\Admin\bin\System.Web.WebPages.Deployment.dll
+F:\Poonam\Admin\Admin\bin\System.Web.WebPages.dll
+F:\Poonam\Admin\Admin\bin\System.Web.WebPages.Razor.dll
+F:\Poonam\Admin\Admin\bin\WebGrease.dll
+F:\Poonam\Admin\Admin\bin\Microsoft.AI.DependencyCollector.xml
+F:\Poonam\Admin\Admin\bin\Microsoft.AI.ServerTelemetryChannel.xml
+F:\Poonam\Admin\Admin\bin\Microsoft.AI.Web.xml
+F:\Poonam\Admin\Admin\bin\Microsoft.AI.WindowsServer.xml
+F:\Poonam\Admin\Admin\bin\Microsoft.ApplicationInsights.xml
+F:\Poonam\Admin\Admin\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+F:\Poonam\Admin\Admin\bin\System.Web.Helpers.xml
+F:\Poonam\Admin\Admin\bin\System.Web.Mvc.xml
+F:\Poonam\Admin\Admin\bin\System.Web.Optimization.xml
+F:\Poonam\Admin\Admin\bin\System.Web.Razor.xml
+F:\Poonam\Admin\Admin\bin\System.Web.WebPages.xml
+F:\Poonam\Admin\Admin\bin\System.Web.WebPages.Deployment.xml
+F:\Poonam\Admin\Admin\bin\System.Web.WebPages.Razor.xml
+F:\Poonam\Admin\Admin\bin\Antlr3.Runtime.pdb
+F:\Poonam\Admin\Admin\bin\Newtonsoft.Json.xml
+F:\Poonam\Admin\Admin\bin\EntityFramework.xml
+F:\Poonam\Admin\Admin\bin\EntityFramework.SqlServer.xml
+F:\Poonam\Admin\Admin\bin\Microsoft.AspNet.Identity.Core.xml
+F:\Poonam\Admin\Admin\bin\Microsoft.AspNet.Identity.Owin.xml
+F:\Poonam\Admin\Admin\bin\Microsoft.AspNet.Identity.EntityFramework.xml
+F:\Poonam\Admin\Admin\obj\Debug\Admin.csprojResolveAssemblyReference.cache
+F:\Poonam\Admin\Admin\obj\Debug\Admin.dll
+F:\Poonam\Admin\Admin\obj\Debug\Admin.pdb
+C:\Users\punus\Downloads\Admin\Admin\Admin\obj\Debug\Admin.csprojResolveAssemblyReference.cache
+C:\Users\punus\Downloads\Admin\Admin\Admin\obj\Debug\Admin.dll
+C:\Users\punus\Downloads\Admin\Admin\Admin\obj\Debug\Admin.pdb
+F:\Poonam\Admin\Admin\Admin\bin\ApplicationInsights.config
+F:\Poonam\Admin\Admin\Admin\bin\roslyn\csc.exe
+F:\Poonam\Admin\Admin\Admin\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+F:\Poonam\Admin\Admin\Admin\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+F:\Poonam\Admin\Admin\Admin\bin\roslyn\Microsoft.CodeAnalysis.dll
+F:\Poonam\Admin\Admin\Admin\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+F:\Poonam\Admin\Admin\Admin\bin\roslyn\Microsoft.CSharp.Core.targets
+F:\Poonam\Admin\Admin\Admin\bin\roslyn\Microsoft.VisualBasic.Core.targets
+F:\Poonam\Admin\Admin\Admin\bin\roslyn\System.Collections.Immutable.dll
+F:\Poonam\Admin\Admin\Admin\bin\roslyn\System.Reflection.Metadata.dll
+F:\Poonam\Admin\Admin\Admin\bin\roslyn\vbc.exe
+F:\Poonam\Admin\Admin\Admin\bin\roslyn\VBCSCompiler.exe
+F:\Poonam\Admin\Admin\Admin\bin\roslyn\VBCSCompiler.exe.config
+F:\Poonam\Admin\Admin\Admin\bin\Admin.dll.config
+F:\Poonam\Admin\Admin\Admin\bin\Admin.dll
+F:\Poonam\Admin\Admin\Admin\bin\Admin.pdb
+F:\Poonam\Admin\Admin\Admin\bin\itextsharp.dll
+F:\Poonam\Admin\Admin\Admin\bin\itextsharp.xml
+F:\Poonam\Admin\Admin\Admin\obj\Debug\Admin.csprojResolveAssemblyReference.cache
+F:\Poonam\Admin\Admin\Admin\obj\Debug\Admin.dll
+F:\Poonam\Admin\Admin\Admin\obj\Debug\Admin.pdb
+F:\Fresh Food\Project\Admin\Admin\bin\ApplicationInsights.config
+F:\Fresh Food\Project\Admin\Admin\bin\roslyn\csc.exe
+F:\Fresh Food\Project\Admin\Admin\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+F:\Fresh Food\Project\Admin\Admin\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+F:\Fresh Food\Project\Admin\Admin\bin\roslyn\Microsoft.CodeAnalysis.dll
+F:\Fresh Food\Project\Admin\Admin\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+F:\Fresh Food\Project\Admin\Admin\bin\roslyn\Microsoft.CSharp.Core.targets
+F:\Fresh Food\Project\Admin\Admin\bin\roslyn\Microsoft.VisualBasic.Core.targets
+F:\Fresh Food\Project\Admin\Admin\bin\roslyn\System.Collections.Immutable.dll
+F:\Fresh Food\Project\Admin\Admin\bin\roslyn\System.Reflection.Metadata.dll
+F:\Fresh Food\Project\Admin\Admin\bin\roslyn\vbc.exe
+F:\Fresh Food\Project\Admin\Admin\bin\roslyn\VBCSCompiler.exe
+F:\Fresh Food\Project\Admin\Admin\bin\roslyn\VBCSCompiler.exe.config
+F:\Fresh Food\Project\Admin\Admin\bin\Admin.dll.config
+F:\Fresh Food\Project\Admin\Admin\bin\Admin.dll
+F:\Fresh Food\Project\Admin\Admin\bin\Admin.pdb
+F:\Fresh Food\Project\Admin\Admin\bin\Antlr3.Runtime.dll
+F:\Fresh Food\Project\Admin\Admin\bin\EntityFramework.dll
+F:\Fresh Food\Project\Admin\Admin\bin\EntityFramework.SqlServer.dll
+F:\Fresh Food\Project\Admin\Admin\bin\itextsharp.dll
+F:\Fresh Food\Project\Admin\Admin\bin\Microsoft.AI.Agent.Intercept.dll
+F:\Fresh Food\Project\Admin\Admin\bin\Microsoft.AI.DependencyCollector.dll
+F:\Fresh Food\Project\Admin\Admin\bin\Microsoft.AI.PerfCounterCollector.dll
+F:\Fresh Food\Project\Admin\Admin\bin\Microsoft.AI.ServerTelemetryChannel.dll
+F:\Fresh Food\Project\Admin\Admin\bin\Microsoft.AI.Web.dll
+F:\Fresh Food\Project\Admin\Admin\bin\Microsoft.AI.WindowsServer.dll
+F:\Fresh Food\Project\Admin\Admin\bin\Microsoft.ApplicationInsights.dll
+F:\Fresh Food\Project\Admin\Admin\bin\Microsoft.AspNet.Identity.Core.dll
+F:\Fresh Food\Project\Admin\Admin\bin\Microsoft.AspNet.Identity.EntityFramework.dll
+F:\Fresh Food\Project\Admin\Admin\bin\Microsoft.AspNet.Identity.Owin.dll
+F:\Fresh Food\Project\Admin\Admin\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+F:\Fresh Food\Project\Admin\Admin\bin\Microsoft.Web.Infrastructure.dll
+F:\Fresh Food\Project\Admin\Admin\bin\Newtonsoft.Json.dll
+F:\Fresh Food\Project\Admin\Admin\bin\System.Web.Helpers.dll
+F:\Fresh Food\Project\Admin\Admin\bin\System.Web.Mvc.dll
+F:\Fresh Food\Project\Admin\Admin\bin\System.Web.Optimization.dll
+F:\Fresh Food\Project\Admin\Admin\bin\System.Web.Razor.dll
+F:\Fresh Food\Project\Admin\Admin\bin\System.Web.WebPages.Deployment.dll
+F:\Fresh Food\Project\Admin\Admin\bin\System.Web.WebPages.dll
+F:\Fresh Food\Project\Admin\Admin\bin\System.Web.WebPages.Razor.dll
+F:\Fresh Food\Project\Admin\Admin\bin\WebGrease.dll
+F:\Fresh Food\Project\Admin\Admin\bin\itextsharp.xml
+F:\Fresh Food\Project\Admin\Admin\bin\Microsoft.AI.DependencyCollector.xml
+F:\Fresh Food\Project\Admin\Admin\bin\Microsoft.AI.ServerTelemetryChannel.xml
+F:\Fresh Food\Project\Admin\Admin\bin\Microsoft.AI.Web.xml
+F:\Fresh Food\Project\Admin\Admin\bin\Microsoft.AI.WindowsServer.xml
+F:\Fresh Food\Project\Admin\Admin\bin\Microsoft.ApplicationInsights.xml
+F:\Fresh Food\Project\Admin\Admin\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+F:\Fresh Food\Project\Admin\Admin\bin\System.Web.Helpers.xml
+F:\Fresh Food\Project\Admin\Admin\bin\System.Web.Mvc.xml
+F:\Fresh Food\Project\Admin\Admin\bin\System.Web.Optimization.xml
+F:\Fresh Food\Project\Admin\Admin\bin\System.Web.Razor.xml
+F:\Fresh Food\Project\Admin\Admin\bin\System.Web.WebPages.xml
+F:\Fresh Food\Project\Admin\Admin\bin\System.Web.WebPages.Deployment.xml
+F:\Fresh Food\Project\Admin\Admin\bin\System.Web.WebPages.Razor.xml
+F:\Fresh Food\Project\Admin\Admin\bin\Antlr3.Runtime.pdb
+F:\Fresh Food\Project\Admin\Admin\bin\Newtonsoft.Json.xml
+F:\Fresh Food\Project\Admin\Admin\bin\EntityFramework.xml
+F:\Fresh Food\Project\Admin\Admin\bin\EntityFramework.SqlServer.xml
+F:\Fresh Food\Project\Admin\Admin\bin\Microsoft.AspNet.Identity.Core.xml
+F:\Fresh Food\Project\Admin\Admin\bin\Microsoft.AspNet.Identity.Owin.xml
+F:\Fresh Food\Project\Admin\Admin\bin\Microsoft.AspNet.Identity.EntityFramework.xml
+F:\Fresh Food\Project\Admin\Admin\obj\Debug\Admin.dll
+F:\Fresh Food\Project\Admin\Admin\obj\Debug\Admin.pdb
+F:\Shivani\FreshFood\FreshFood\Admin\obj\Debug\Admin.csproj.AssemblyReference.cache
+F:\Shivani\FreshFood\FreshFood\Admin\obj\Debug\Admin.csproj.CoreCompileInputs.cache
+F:\Shivani\FreshFood\FreshFood\Admin\bin\ApplicationInsights.config
+F:\Shivani\FreshFood\FreshFood\Admin\bin\roslyn\csc.exe
+F:\Shivani\FreshFood\FreshFood\Admin\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+F:\Shivani\FreshFood\FreshFood\Admin\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+F:\Shivani\FreshFood\FreshFood\Admin\bin\roslyn\Microsoft.CodeAnalysis.dll
+F:\Shivani\FreshFood\FreshFood\Admin\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+F:\Shivani\FreshFood\FreshFood\Admin\bin\roslyn\Microsoft.CSharp.Core.targets
+F:\Shivani\FreshFood\FreshFood\Admin\bin\roslyn\Microsoft.VisualBasic.Core.targets
+F:\Shivani\FreshFood\FreshFood\Admin\bin\roslyn\System.Collections.Immutable.dll
+F:\Shivani\FreshFood\FreshFood\Admin\bin\roslyn\System.Reflection.Metadata.dll
+F:\Shivani\FreshFood\FreshFood\Admin\bin\roslyn\vbc.exe
+F:\Shivani\FreshFood\FreshFood\Admin\bin\roslyn\VBCSCompiler.exe
+F:\Shivani\FreshFood\FreshFood\Admin\bin\roslyn\VBCSCompiler.exe.config
+F:\Shivani\FreshFood\FreshFood\Admin\bin\Admin.dll.config
+F:\Shivani\FreshFood\FreshFood\Admin\bin\Admin.dll
+F:\Shivani\FreshFood\FreshFood\Admin\bin\Admin.pdb
+F:\Shivani\FreshFood\FreshFood\Admin\bin\Antlr3.Runtime.dll
+F:\Shivani\FreshFood\FreshFood\Admin\bin\EntityFramework.dll
+F:\Shivani\FreshFood\FreshFood\Admin\bin\EntityFramework.SqlServer.dll
+F:\Shivani\FreshFood\FreshFood\Admin\bin\itextsharp.dll
+F:\Shivani\FreshFood\FreshFood\Admin\bin\Microsoft.AI.Agent.Intercept.dll
+F:\Shivani\FreshFood\FreshFood\Admin\bin\Microsoft.AI.DependencyCollector.dll
+F:\Shivani\FreshFood\FreshFood\Admin\bin\Microsoft.AI.PerfCounterCollector.dll
+F:\Shivani\FreshFood\FreshFood\Admin\bin\Microsoft.AI.ServerTelemetryChannel.dll
+F:\Shivani\FreshFood\FreshFood\Admin\bin\Microsoft.AI.Web.dll
+F:\Shivani\FreshFood\FreshFood\Admin\bin\Microsoft.AI.WindowsServer.dll
+F:\Shivani\FreshFood\FreshFood\Admin\bin\Microsoft.ApplicationInsights.dll
+F:\Shivani\FreshFood\FreshFood\Admin\bin\Microsoft.AspNet.Identity.Core.dll
+F:\Shivani\FreshFood\FreshFood\Admin\bin\Microsoft.AspNet.Identity.EntityFramework.dll
+F:\Shivani\FreshFood\FreshFood\Admin\bin\Microsoft.AspNet.Identity.Owin.dll
+F:\Shivani\FreshFood\FreshFood\Admin\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+F:\Shivani\FreshFood\FreshFood\Admin\bin\Microsoft.Web.Infrastructure.dll
+F:\Shivani\FreshFood\FreshFood\Admin\bin\Newtonsoft.Json.dll
+F:\Shivani\FreshFood\FreshFood\Admin\bin\System.Net.Http.Formatting.dll
+F:\Shivani\FreshFood\FreshFood\Admin\bin\System.Web.Helpers.dll
+F:\Shivani\FreshFood\FreshFood\Admin\bin\System.Web.Http.dll
+F:\Shivani\FreshFood\FreshFood\Admin\bin\System.Web.Mvc.dll
+F:\Shivani\FreshFood\FreshFood\Admin\bin\System.Web.Optimization.dll
+F:\Shivani\FreshFood\FreshFood\Admin\bin\System.Web.Razor.dll
+F:\Shivani\FreshFood\FreshFood\Admin\bin\System.Web.WebPages.Deployment.dll
+F:\Shivani\FreshFood\FreshFood\Admin\bin\System.Web.WebPages.dll
+F:\Shivani\FreshFood\FreshFood\Admin\bin\System.Web.WebPages.Razor.dll
+F:\Shivani\FreshFood\FreshFood\Admin\bin\WebApi.OutputCache.Core.dll
+F:\Shivani\FreshFood\FreshFood\Admin\bin\WebApi.OutputCache.V2.dll
+F:\Shivani\FreshFood\FreshFood\Admin\bin\WebGrease.dll
+F:\Shivani\FreshFood\FreshFood\Admin\bin\itextsharp.xml
+F:\Shivani\FreshFood\FreshFood\Admin\bin\Microsoft.AI.DependencyCollector.xml
+F:\Shivani\FreshFood\FreshFood\Admin\bin\Microsoft.AI.ServerTelemetryChannel.xml
+F:\Shivani\FreshFood\FreshFood\Admin\bin\Microsoft.AI.Web.xml
+F:\Shivani\FreshFood\FreshFood\Admin\bin\Microsoft.AI.WindowsServer.xml
+F:\Shivani\FreshFood\FreshFood\Admin\bin\Microsoft.ApplicationInsights.xml
+F:\Shivani\FreshFood\FreshFood\Admin\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+F:\Shivani\FreshFood\FreshFood\Admin\bin\System.Net.Http.Formatting.xml
+F:\Shivani\FreshFood\FreshFood\Admin\bin\System.Web.Http.xml
+F:\Shivani\FreshFood\FreshFood\Admin\bin\System.Web.Helpers.xml
+F:\Shivani\FreshFood\FreshFood\Admin\bin\System.Web.Mvc.xml
+F:\Shivani\FreshFood\FreshFood\Admin\bin\System.Web.Optimization.xml
+F:\Shivani\FreshFood\FreshFood\Admin\bin\System.Web.Razor.xml
+F:\Shivani\FreshFood\FreshFood\Admin\bin\System.Web.WebPages.xml
+F:\Shivani\FreshFood\FreshFood\Admin\bin\System.Web.WebPages.Deployment.xml
+F:\Shivani\FreshFood\FreshFood\Admin\bin\System.Web.WebPages.Razor.xml
+F:\Shivani\FreshFood\FreshFood\Admin\bin\WebApi.OutputCache.V2.xml
+F:\Shivani\FreshFood\FreshFood\Admin\bin\Antlr3.Runtime.pdb
+F:\Shivani\FreshFood\FreshFood\Admin\bin\Newtonsoft.Json.xml
+F:\Shivani\FreshFood\FreshFood\Admin\bin\EntityFramework.xml
+F:\Shivani\FreshFood\FreshFood\Admin\bin\EntityFramework.SqlServer.xml
+F:\Shivani\FreshFood\FreshFood\Admin\bin\Microsoft.AspNet.Identity.Core.xml
+F:\Shivani\FreshFood\FreshFood\Admin\bin\Microsoft.AspNet.Identity.Owin.xml
+F:\Shivani\FreshFood\FreshFood\Admin\bin\Microsoft.AspNet.Identity.EntityFramework.xml
+F:\Shivani\FreshFood\FreshFood\Admin\obj\Debug\Admin.csproj.CopyComplete
+F:\Shivani\FreshFood\FreshFood\Admin\obj\Debug\Admin.dll
+F:\Shivani\FreshFood\FreshFood\Admin\obj\Debug\Admin.pdb
+E:\FreshFood\NewFF\FreshFood\FreshFood\FreshFood\Admin\obj\Debug\Admin.csproj.AssemblyReference.cache
+E:\FreshFood\NewFF\FreshFood\FreshFood\FreshFood\Admin\obj\Debug\Admin.csproj.CoreCompileInputs.cache
+E:\FreshFood\NewFF\FreshFood\FreshFood\FreshFood\Admin\bin\ApplicationInsights.config
+E:\FreshFood\NewFF\FreshFood\FreshFood\FreshFood\Admin\bin\roslyn\csc.exe
+E:\FreshFood\NewFF\FreshFood\FreshFood\FreshFood\Admin\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+E:\FreshFood\NewFF\FreshFood\FreshFood\FreshFood\Admin\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+E:\FreshFood\NewFF\FreshFood\FreshFood\FreshFood\Admin\bin\roslyn\Microsoft.CodeAnalysis.dll
+E:\FreshFood\NewFF\FreshFood\FreshFood\FreshFood\Admin\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+E:\FreshFood\NewFF\FreshFood\FreshFood\FreshFood\Admin\bin\roslyn\Microsoft.CSharp.Core.targets
+E:\FreshFood\NewFF\FreshFood\FreshFood\FreshFood\Admin\bin\roslyn\Microsoft.VisualBasic.Core.targets
+E:\FreshFood\NewFF\FreshFood\FreshFood\FreshFood\Admin\bin\roslyn\System.Collections.Immutable.dll
+E:\FreshFood\NewFF\FreshFood\FreshFood\FreshFood\Admin\bin\roslyn\System.Reflection.Metadata.dll
+E:\FreshFood\NewFF\FreshFood\FreshFood\FreshFood\Admin\bin\roslyn\vbc.exe
+E:\FreshFood\NewFF\FreshFood\FreshFood\FreshFood\Admin\bin\roslyn\VBCSCompiler.exe
+E:\FreshFood\NewFF\FreshFood\FreshFood\FreshFood\Admin\bin\roslyn\VBCSCompiler.exe.config
+E:\FreshFood\NewFF\FreshFood\FreshFood\FreshFood\Admin\bin\Admin.dll.config
+E:\FreshFood\NewFF\FreshFood\FreshFood\FreshFood\Admin\bin\Admin.dll
+E:\FreshFood\NewFF\FreshFood\FreshFood\FreshFood\Admin\bin\Admin.pdb
+E:\FreshFood\NewFF\FreshFood\FreshFood\FreshFood\Admin\bin\Antlr3.Runtime.dll
+E:\FreshFood\NewFF\FreshFood\FreshFood\FreshFood\Admin\bin\EntityFramework.dll
+E:\FreshFood\NewFF\FreshFood\FreshFood\FreshFood\Admin\bin\EntityFramework.SqlServer.dll
+E:\FreshFood\NewFF\FreshFood\FreshFood\FreshFood\Admin\bin\itextsharp.dll
+E:\FreshFood\NewFF\FreshFood\FreshFood\FreshFood\Admin\bin\Microsoft.AI.Agent.Intercept.dll
+E:\FreshFood\NewFF\FreshFood\FreshFood\FreshFood\Admin\bin\Microsoft.AI.DependencyCollector.dll
+E:\FreshFood\NewFF\FreshFood\FreshFood\FreshFood\Admin\bin\Microsoft.AI.PerfCounterCollector.dll
+E:\FreshFood\NewFF\FreshFood\FreshFood\FreshFood\Admin\bin\Microsoft.AI.ServerTelemetryChannel.dll
+E:\FreshFood\NewFF\FreshFood\FreshFood\FreshFood\Admin\bin\Microsoft.AI.Web.dll
+E:\FreshFood\NewFF\FreshFood\FreshFood\FreshFood\Admin\bin\Microsoft.AI.WindowsServer.dll
+E:\FreshFood\NewFF\FreshFood\FreshFood\FreshFood\Admin\bin\Microsoft.ApplicationInsights.dll
+E:\FreshFood\NewFF\FreshFood\FreshFood\FreshFood\Admin\bin\Microsoft.AspNet.Identity.Core.dll
+E:\FreshFood\NewFF\FreshFood\FreshFood\FreshFood\Admin\bin\Microsoft.AspNet.Identity.EntityFramework.dll
+E:\FreshFood\NewFF\FreshFood\FreshFood\FreshFood\Admin\bin\Microsoft.AspNet.Identity.Owin.dll
+E:\FreshFood\NewFF\FreshFood\FreshFood\FreshFood\Admin\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+E:\FreshFood\NewFF\FreshFood\FreshFood\FreshFood\Admin\bin\Microsoft.Web.Infrastructure.dll
+E:\FreshFood\NewFF\FreshFood\FreshFood\FreshFood\Admin\bin\Newtonsoft.Json.dll
+E:\FreshFood\NewFF\FreshFood\FreshFood\FreshFood\Admin\bin\System.Net.Http.Formatting.dll
+E:\FreshFood\NewFF\FreshFood\FreshFood\FreshFood\Admin\bin\System.Web.Helpers.dll
+E:\FreshFood\NewFF\FreshFood\FreshFood\FreshFood\Admin\bin\System.Web.Http.dll
+E:\FreshFood\NewFF\FreshFood\FreshFood\FreshFood\Admin\bin\System.Web.Mvc.dll
+E:\FreshFood\NewFF\FreshFood\FreshFood\FreshFood\Admin\bin\System.Web.Optimization.dll
+E:\FreshFood\NewFF\FreshFood\FreshFood\FreshFood\Admin\bin\System.Web.Razor.dll
+E:\FreshFood\NewFF\FreshFood\FreshFood\FreshFood\Admin\bin\System.Web.WebPages.Deployment.dll
+E:\FreshFood\NewFF\FreshFood\FreshFood\FreshFood\Admin\bin\System.Web.WebPages.dll
+E:\FreshFood\NewFF\FreshFood\FreshFood\FreshFood\Admin\bin\System.Web.WebPages.Razor.dll
+E:\FreshFood\NewFF\FreshFood\FreshFood\FreshFood\Admin\bin\WebApi.OutputCache.Core.dll
+E:\FreshFood\NewFF\FreshFood\FreshFood\FreshFood\Admin\bin\WebApi.OutputCache.V2.dll
+E:\FreshFood\NewFF\FreshFood\FreshFood\FreshFood\Admin\bin\WebGrease.dll
+E:\FreshFood\NewFF\FreshFood\FreshFood\FreshFood\Admin\bin\itextsharp.xml
+E:\FreshFood\NewFF\FreshFood\FreshFood\FreshFood\Admin\bin\Microsoft.AI.DependencyCollector.xml
+E:\FreshFood\NewFF\FreshFood\FreshFood\FreshFood\Admin\bin\Microsoft.AI.ServerTelemetryChannel.xml
+E:\FreshFood\NewFF\FreshFood\FreshFood\FreshFood\Admin\bin\Microsoft.AI.Web.xml
+E:\FreshFood\NewFF\FreshFood\FreshFood\FreshFood\Admin\bin\Microsoft.AI.WindowsServer.xml
+E:\FreshFood\NewFF\FreshFood\FreshFood\FreshFood\Admin\bin\Microsoft.ApplicationInsights.xml
+E:\FreshFood\NewFF\FreshFood\FreshFood\FreshFood\Admin\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+E:\FreshFood\NewFF\FreshFood\FreshFood\FreshFood\Admin\bin\System.Net.Http.Formatting.xml
+E:\FreshFood\NewFF\FreshFood\FreshFood\FreshFood\Admin\bin\System.Web.Http.xml
+E:\FreshFood\NewFF\FreshFood\FreshFood\FreshFood\Admin\bin\System.Web.Helpers.xml
+E:\FreshFood\NewFF\FreshFood\FreshFood\FreshFood\Admin\bin\System.Web.Mvc.xml
+E:\FreshFood\NewFF\FreshFood\FreshFood\FreshFood\Admin\bin\System.Web.Optimization.xml
+E:\FreshFood\NewFF\FreshFood\FreshFood\FreshFood\Admin\bin\System.Web.Razor.xml
+E:\FreshFood\NewFF\FreshFood\FreshFood\FreshFood\Admin\bin\System.Web.WebPages.xml
+E:\FreshFood\NewFF\FreshFood\FreshFood\FreshFood\Admin\bin\System.Web.WebPages.Deployment.xml
+E:\FreshFood\NewFF\FreshFood\FreshFood\FreshFood\Admin\bin\System.Web.WebPages.Razor.xml
+E:\FreshFood\NewFF\FreshFood\FreshFood\FreshFood\Admin\bin\WebApi.OutputCache.V2.xml
+E:\FreshFood\NewFF\FreshFood\FreshFood\FreshFood\Admin\bin\Antlr3.Runtime.pdb
+E:\FreshFood\NewFF\FreshFood\FreshFood\FreshFood\Admin\bin\Newtonsoft.Json.xml
+E:\FreshFood\NewFF\FreshFood\FreshFood\FreshFood\Admin\bin\EntityFramework.xml
+E:\FreshFood\NewFF\FreshFood\FreshFood\FreshFood\Admin\bin\EntityFramework.SqlServer.xml
+E:\FreshFood\NewFF\FreshFood\FreshFood\FreshFood\Admin\bin\Microsoft.AspNet.Identity.Core.xml
+E:\FreshFood\NewFF\FreshFood\FreshFood\FreshFood\Admin\bin\Microsoft.AspNet.Identity.Owin.xml
+E:\FreshFood\NewFF\FreshFood\FreshFood\FreshFood\Admin\bin\Microsoft.AspNet.Identity.EntityFramework.xml
+E:\FreshFood\NewFF\FreshFood\FreshFood\FreshFood\Admin\obj\Debug\Admin.csproj.CopyComplete
+E:\FreshFood\NewFF\FreshFood\FreshFood\FreshFood\Admin\obj\Debug\Admin.dll
+E:\FreshFood\NewFF\FreshFood\FreshFood\FreshFood\Admin\obj\Debug\Admin.pdb
+E:\FreshFood\NewFF\FreshFood\FreshFood\FreshFood2022\Admin\bin\ApplicationInsights.config
+E:\FreshFood\NewFF\FreshFood\FreshFood\FreshFood2022\Admin\bin\roslyn\csc.exe
+E:\FreshFood\NewFF\FreshFood\FreshFood\FreshFood2022\Admin\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+E:\FreshFood\NewFF\FreshFood\FreshFood\FreshFood2022\Admin\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+E:\FreshFood\NewFF\FreshFood\FreshFood\FreshFood2022\Admin\bin\roslyn\Microsoft.CodeAnalysis.dll
+E:\FreshFood\NewFF\FreshFood\FreshFood\FreshFood2022\Admin\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+E:\FreshFood\NewFF\FreshFood\FreshFood\FreshFood2022\Admin\bin\roslyn\Microsoft.CSharp.Core.targets
+E:\FreshFood\NewFF\FreshFood\FreshFood\FreshFood2022\Admin\bin\roslyn\Microsoft.VisualBasic.Core.targets
+E:\FreshFood\NewFF\FreshFood\FreshFood\FreshFood2022\Admin\bin\roslyn\System.Collections.Immutable.dll
+E:\FreshFood\NewFF\FreshFood\FreshFood\FreshFood2022\Admin\bin\roslyn\System.Reflection.Metadata.dll
+E:\FreshFood\NewFF\FreshFood\FreshFood\FreshFood2022\Admin\bin\roslyn\vbc.exe
+E:\FreshFood\NewFF\FreshFood\FreshFood\FreshFood2022\Admin\bin\roslyn\VBCSCompiler.exe
+E:\FreshFood\NewFF\FreshFood\FreshFood\FreshFood2022\Admin\bin\roslyn\VBCSCompiler.exe.config
+E:\FreshFood\NewFF\FreshFood\FreshFood\FreshFood2022\Admin\bin\Admin.dll.config
+E:\FreshFood\NewFF\FreshFood\FreshFood\FreshFood2022\Admin\bin\Admin.dll
+E:\FreshFood\NewFF\FreshFood\FreshFood\FreshFood2022\Admin\bin\Admin.pdb
+E:\FreshFood\NewFF\FreshFood\FreshFood\FreshFood2022\Admin\bin\Antlr3.Runtime.dll
+E:\FreshFood\NewFF\FreshFood\FreshFood\FreshFood2022\Admin\bin\EntityFramework.dll
+E:\FreshFood\NewFF\FreshFood\FreshFood\FreshFood2022\Admin\bin\EntityFramework.SqlServer.dll
+E:\FreshFood\NewFF\FreshFood\FreshFood\FreshFood2022\Admin\bin\itextsharp.dll
+E:\FreshFood\NewFF\FreshFood\FreshFood\FreshFood2022\Admin\bin\Microsoft.AI.Agent.Intercept.dll
+E:\FreshFood\NewFF\FreshFood\FreshFood\FreshFood2022\Admin\bin\Microsoft.AI.DependencyCollector.dll
+E:\FreshFood\NewFF\FreshFood\FreshFood\FreshFood2022\Admin\bin\Microsoft.AI.PerfCounterCollector.dll
+E:\FreshFood\NewFF\FreshFood\FreshFood\FreshFood2022\Admin\bin\Microsoft.AI.ServerTelemetryChannel.dll
+E:\FreshFood\NewFF\FreshFood\FreshFood\FreshFood2022\Admin\bin\Microsoft.AI.Web.dll
+E:\FreshFood\NewFF\FreshFood\FreshFood\FreshFood2022\Admin\bin\Microsoft.AI.WindowsServer.dll
+E:\FreshFood\NewFF\FreshFood\FreshFood\FreshFood2022\Admin\bin\Microsoft.ApplicationInsights.dll
+E:\FreshFood\NewFF\FreshFood\FreshFood\FreshFood2022\Admin\bin\Microsoft.AspNet.Identity.Core.dll
+E:\FreshFood\NewFF\FreshFood\FreshFood\FreshFood2022\Admin\bin\Microsoft.AspNet.Identity.EntityFramework.dll
+E:\FreshFood\NewFF\FreshFood\FreshFood\FreshFood2022\Admin\bin\Microsoft.AspNet.Identity.Owin.dll
+E:\FreshFood\NewFF\FreshFood\FreshFood\FreshFood2022\Admin\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+E:\FreshFood\NewFF\FreshFood\FreshFood\FreshFood2022\Admin\bin\Microsoft.Web.Infrastructure.dll
+E:\FreshFood\NewFF\FreshFood\FreshFood\FreshFood2022\Admin\bin\Newtonsoft.Json.dll
+E:\FreshFood\NewFF\FreshFood\FreshFood\FreshFood2022\Admin\bin\System.Net.Http.Formatting.dll
+E:\FreshFood\NewFF\FreshFood\FreshFood\FreshFood2022\Admin\bin\System.Web.Helpers.dll
+E:\FreshFood\NewFF\FreshFood\FreshFood\FreshFood2022\Admin\bin\System.Web.Http.dll
+E:\FreshFood\NewFF\FreshFood\FreshFood\FreshFood2022\Admin\bin\System.Web.Mvc.dll
+E:\FreshFood\NewFF\FreshFood\FreshFood\FreshFood2022\Admin\bin\System.Web.Optimization.dll
+E:\FreshFood\NewFF\FreshFood\FreshFood\FreshFood2022\Admin\bin\System.Web.Razor.dll
+E:\FreshFood\NewFF\FreshFood\FreshFood\FreshFood2022\Admin\bin\System.Web.WebPages.Deployment.dll
+E:\FreshFood\NewFF\FreshFood\FreshFood\FreshFood2022\Admin\bin\System.Web.WebPages.dll
+E:\FreshFood\NewFF\FreshFood\FreshFood\FreshFood2022\Admin\bin\System.Web.WebPages.Razor.dll
+E:\FreshFood\NewFF\FreshFood\FreshFood\FreshFood2022\Admin\bin\WebApi.OutputCache.Core.dll
+E:\FreshFood\NewFF\FreshFood\FreshFood\FreshFood2022\Admin\bin\WebApi.OutputCache.V2.dll
+E:\FreshFood\NewFF\FreshFood\FreshFood\FreshFood2022\Admin\bin\WebGrease.dll
+E:\FreshFood\NewFF\FreshFood\FreshFood\FreshFood2022\Admin\bin\itextsharp.xml
+E:\FreshFood\NewFF\FreshFood\FreshFood\FreshFood2022\Admin\bin\Microsoft.AI.DependencyCollector.xml
+E:\FreshFood\NewFF\FreshFood\FreshFood\FreshFood2022\Admin\bin\Microsoft.AI.ServerTelemetryChannel.xml
+E:\FreshFood\NewFF\FreshFood\FreshFood\FreshFood2022\Admin\bin\Microsoft.AI.Web.xml
+E:\FreshFood\NewFF\FreshFood\FreshFood\FreshFood2022\Admin\bin\Microsoft.AI.WindowsServer.xml
+E:\FreshFood\NewFF\FreshFood\FreshFood\FreshFood2022\Admin\bin\Microsoft.ApplicationInsights.xml
+E:\FreshFood\NewFF\FreshFood\FreshFood\FreshFood2022\Admin\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+E:\FreshFood\NewFF\FreshFood\FreshFood\FreshFood2022\Admin\bin\System.Net.Http.Formatting.xml
+E:\FreshFood\NewFF\FreshFood\FreshFood\FreshFood2022\Admin\bin\System.Web.Http.xml
+E:\FreshFood\NewFF\FreshFood\FreshFood\FreshFood2022\Admin\bin\System.Web.Helpers.xml
+E:\FreshFood\NewFF\FreshFood\FreshFood\FreshFood2022\Admin\bin\System.Web.Mvc.xml
+E:\FreshFood\NewFF\FreshFood\FreshFood\FreshFood2022\Admin\bin\System.Web.Optimization.xml
+E:\FreshFood\NewFF\FreshFood\FreshFood\FreshFood2022\Admin\bin\System.Web.Razor.xml
+E:\FreshFood\NewFF\FreshFood\FreshFood\FreshFood2022\Admin\bin\System.Web.WebPages.xml
+E:\FreshFood\NewFF\FreshFood\FreshFood\FreshFood2022\Admin\bin\System.Web.WebPages.Deployment.xml
+E:\FreshFood\NewFF\FreshFood\FreshFood\FreshFood2022\Admin\bin\System.Web.WebPages.Razor.xml
+E:\FreshFood\NewFF\FreshFood\FreshFood\FreshFood2022\Admin\bin\WebApi.OutputCache.V2.xml
+E:\FreshFood\NewFF\FreshFood\FreshFood\FreshFood2022\Admin\bin\Antlr3.Runtime.pdb
+E:\FreshFood\NewFF\FreshFood\FreshFood\FreshFood2022\Admin\bin\Newtonsoft.Json.xml
+E:\FreshFood\NewFF\FreshFood\FreshFood\FreshFood2022\Admin\bin\EntityFramework.xml
+E:\FreshFood\NewFF\FreshFood\FreshFood\FreshFood2022\Admin\bin\EntityFramework.SqlServer.xml
+E:\FreshFood\NewFF\FreshFood\FreshFood\FreshFood2022\Admin\bin\Microsoft.AspNet.Identity.Core.xml
+E:\FreshFood\NewFF\FreshFood\FreshFood\FreshFood2022\Admin\bin\Microsoft.AspNet.Identity.Owin.xml
+E:\FreshFood\NewFF\FreshFood\FreshFood\FreshFood2022\Admin\bin\Microsoft.AspNet.Identity.EntityFramework.xml
+E:\FreshFood\NewFF\FreshFood\FreshFood\FreshFood2022\Admin\obj\Debug\Admin.csproj.AssemblyReference.cache
+E:\FreshFood\NewFF\FreshFood\FreshFood\FreshFood2022\Admin\obj\Debug\Admin.csproj.CoreCompileInputs.cache
+E:\FreshFood\NewFF\FreshFood\FreshFood\FreshFood2022\Admin\obj\Debug\Admin.csproj.CopyComplete
+E:\FreshFood\NewFF\FreshFood\FreshFood\FreshFood2022\Admin\obj\Debug\Admin.dll
+E:\FreshFood\NewFF\FreshFood\FreshFood\FreshFood2022\Admin\obj\Debug\Admin.pdb
